@@ -3,33 +3,41 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root Page View Controller-->
+        <scene sceneID="OlF-DB-hG0">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="zzm-cj-ztB" customClass="RootPageViewController" customModule="SamaTube" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2ay-d3-7di" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="4"/>
+        </scene>
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SamaTube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="SamaTube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r9g-sq-ki0">
-                                <rect key="frame" x="128.33333333333337" y="408.66666666666669" width="136.66666666666663" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="p8o-Sv-eB0"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Esto se quitará"/>
-                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFT-he-QOf">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <connections>
+                                    <segue destination="zzm-cj-ztB" kind="embed" id="fdW-QK-gRe"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="r9g-sq-ki0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xgc-nm-9ox"/>
-                            <constraint firstItem="r9g-sq-ki0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ivw-SS-WQ8"/>
+                            <constraint firstItem="cFT-he-QOf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ixm-ae-nFy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cFT-he-QOf" secondAttribute="bottom" id="T9g-8M-vSP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cFT-he-QOf" secondAttribute="trailing" id="bnd-kH-VVJ"/>
+                            <constraint firstItem="cFT-he-QOf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fal-Gu-ncj"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,8 +47,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="backgroundColor">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
