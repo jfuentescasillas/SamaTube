@@ -39,7 +39,7 @@ class HomeProvider: HomeProviderProtocol {
 			
 			return model
 		} catch {
-			print("Error: \(error)")
+			print("Error getting videos: \(error)")
 			
 			throw error
 		}
@@ -58,7 +58,7 @@ class HomeProvider: HomeProviderProtocol {
 			
 			return model
 		} catch {
-			print("Error: \(error)")
+			print("Error getting Channel: \(error)")
 			
 			throw error
 		}
@@ -77,7 +77,7 @@ class HomeProvider: HomeProviderProtocol {
 			
 			return model
 		} catch {
-			print("Error: \(error)")
+			print("Error getting Playlists: \(error)")
 			
 			throw error
 		}
@@ -86,17 +86,17 @@ class HomeProvider: HomeProviderProtocol {
 	
 	// MARK: Get PlaylistItems
 	func getPlaylistItems(playlistId: String) async throws -> PlaylistItemsModel {
-		let queryParams : [String: String] = ["part": "snippet,id,contentDetails",
+		let queryParams: [String: String] = ["part": "snippet,id,contentDetails",
 											 "playlistId": playlistId]
 
 		let requestModel = RequestModel(endPoint: .playlistItems, queryItems: queryParams)
 		
 		do{
-			let model = try await ServiceLayer.callService(requestModel,
-														   PlaylistItemsModel.self)
+			let model = try await ServiceLayer.callService(requestModel, PlaylistItemsModel.self)
+			
 			return model
-		}catch{
-			print(error)
+		} catch {
+			print("Error getting PlaylistsItems (ATTENTION: NOT PlayLists): \(error)")
 			
 			throw error
 		}

@@ -30,6 +30,8 @@ class ServiceLayer {
 			}
 			
 			if httpResponse.statusCode > 299 {
+				print("Error in statusCode: \(httpResponse.statusCode)")
+				
 				throw NetworkError.statusCodeError
 			}
 			
@@ -40,11 +42,14 @@ class ServiceLayer {
 				
 				return decodeData
 			} catch {
+				print("Error calling the service and decoding data: \(error)")
+				
 				throw NetworkError.couldNotDecodeData
 			}
 			
 		} catch {
-			print(error)
+			print("NetworkError.genericError: \(error)")
+			
 			throw NetworkError.genericError
 		}
 	}
