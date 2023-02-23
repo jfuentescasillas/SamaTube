@@ -19,12 +19,19 @@ class HomePresenter {
 	weak var delegate: HomeViewProtocol?
 	private var objectList = [[Any]]()
 	
-	init(delegate: HomeViewProtocol, provider: HomeProvider = HomeProvider()) {
+	init(delegate: HomeViewProtocol, provider: HomeProviderProtocol = HomeProvider()) {
 		self.delegate = delegate
 		self.provider = provider
+		
+		#if DEBUG
+		if MockManager.shared.runAppWithMock {
+			self.provider = HomeProviderMock()
+		}
+		#endif
 	} 
 	
 	
+	@MainActor
 	func getHomeObjects() async {
 		objectList.removeAll()
 		
