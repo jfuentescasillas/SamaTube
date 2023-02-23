@@ -1,0 +1,241 @@
+{
+	"kind": "youtube#playlistListResponse",
+	"etag": "ujg3H65IMN0UiEBt2nGra3KeEpc",
+	"nextPageToken": "CAUQAA",
+	"pageInfo": {
+		"totalResults": 11,
+		"resultsPerPage": 5
+	},
+	"items": [
+		{
+			"kind": "youtube#playlist",
+			"etag": "3XX-xkoPr8X2Lwftr5Sj_6DANns",
+			"id": "PLT_OObKZ3CptOu3A6_Mv-lk7iPU_sbNq5",
+			"snippet": {
+				"publishedAt": "2022-08-30T06:17:55Z",
+				"channelId": "UC_I_lCplbwIf60iUgsTE79g",
+				"title": "Shapes en SwiftUI",
+				"description": "",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/gZGg5QP-sj4/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/gZGg5QP-sj4/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/gZGg5QP-sj4/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					},
+					"standard": {
+						"url": "https://i.ytimg.com/vi/gZGg5QP-sj4/sddefault.jpg",
+						"width": 640,
+						"height": 480
+					},
+					"maxres": {
+						"url": "https://i.ytimg.com/vi/gZGg5QP-sj4/maxresdefault.jpg",
+						"width": 1280,
+						"height": 720
+					}
+				},
+				"channelTitle": "Victor Roldan Dev",
+				"localized": {
+					"title": "Shapes en SwiftUI",
+					"description": ""
+				}
+			},
+			"contentDetails": {
+				"itemCount": 2
+			}
+		},
+		{
+			"kind": "youtube#playlist",
+			"etag": "NlNo4x4yVMuzQ5apN-h0tsli-gg",
+			"id": "PLT_OObKZ3CpscUEWebc7hReP24nXjhui4",
+			"snippet": {
+				"publishedAt": "2022-06-20T16:03:50Z",
+				"channelId": "UC_I_lCplbwIf60iUgsTE79g",
+				"title": "Curso de SwiftUI 4 para Principiantes",
+				"description": "Un curso de introducción a SwiftUI 4.0 donde paso por sus principales componentes y te enteres de cómo funciona este Framework.",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/b-GYQYUQzAQ/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/b-GYQYUQzAQ/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/b-GYQYUQzAQ/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					},
+					"standard": {
+						"url": "https://i.ytimg.com/vi/b-GYQYUQzAQ/sddefault.jpg",
+						"width": 640,
+						"height": 480
+					},
+					"maxres": {
+						"url": "https://i.ytimg.com/vi/b-GYQYUQzAQ/maxresdefault.jpg",
+						"width": 1280,
+						"height": 720
+					}
+				},
+				"channelTitle": "Victor Roldan Dev",
+				"localized": {
+					"title": "Curso de SwiftUI 4 para Principiantes",
+					"description": "Un curso de introducción a SwiftUI 4.0 donde paso por sus principales componentes y te enteres de cómo funciona este Framework."
+				}
+			},
+			"contentDetails": {
+				"itemCount": 18
+			}
+		},
+		{
+			"kind": "youtube#playlist",
+			"etag": "cmN3dkYAfl772eQxjBpf2iDWgP8",
+			"id": "PLT_OObKZ3Cpta8gTfbI_ynqu7TgWCYxKO",
+			"snippet": {
+				"publishedAt": "2022-06-07T15:57:38Z",
+				"channelId": "UC_I_lCplbwIf60iUgsTE79g",
+				"title": "WWDC22",
+				"description": "",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/77dIzaydGO0/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/77dIzaydGO0/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/77dIzaydGO0/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					},
+					"standard": {
+						"url": "https://i.ytimg.com/vi/77dIzaydGO0/sddefault.jpg",
+						"width": 640,
+						"height": 480
+					},
+					"maxres": {
+						"url": "https://i.ytimg.com/vi/77dIzaydGO0/maxresdefault.jpg",
+						"width": 1280,
+						"height": 720
+					}
+				},
+				"channelTitle": "Victor Roldan Dev",
+				"localized": {
+					"title": "WWDC22",
+					"description": ""
+				}
+			},
+			"contentDetails": {
+				"itemCount": 6
+			}
+		},
+		{
+			"kind": "youtube#playlist",
+			"etag": "sYs0in_3FbDvA4rckmS2_DDooZ4",
+			"id": "PLT_OObKZ3CpvYfPoK9wX57M1JiggnxW8t",
+			"snippet": {
+				"publishedAt": "2022-06-02T01:42:50Z",
+				"channelId": "UC_I_lCplbwIf60iUgsTE79g",
+				"title": "Patrones de Diseño - Swift",
+				"description": "",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/jFKuMb6kILU/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/jFKuMb6kILU/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/jFKuMb6kILU/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					},
+					"standard": {
+						"url": "https://i.ytimg.com/vi/jFKuMb6kILU/sddefault.jpg",
+						"width": 640,
+						"height": 480
+					},
+					"maxres": {
+						"url": "https://i.ytimg.com/vi/jFKuMb6kILU/maxresdefault.jpg",
+						"width": 1280,
+						"height": 720
+					}
+				},
+				"channelTitle": "Victor Roldan Dev",
+				"localized": {
+					"title": "Patrones de Diseño - Swift",
+					"description": ""
+				}
+			},
+			"contentDetails": {
+				"itemCount": 3
+			}
+		},
+		{
+			"kind": "youtube#playlist",
+			"etag": "m-oO2HVUiW9IIhlu184tQ_IF8yQ",
+			"id": "PLT_OObKZ3CpvP4iIGm4U1oWXL2-ksx2E4",
+			"snippet": {
+				"publishedAt": "2022-05-23T13:33:20Z",
+				"channelId": "UC_I_lCplbwIf60iUgsTE79g",
+				"title": "Curso de Unit Testing con Swift - Xcode",
+				"description": "En esta serie de videos te enseño cómo crear las pruebas unitarias o unit tests en tu aplicación. La idea es que a partir de ahora tengas conocimientos suficientes como para crear tus propios unit tests en tu aplicación. Debes ver todos los videos para entender por completo cómo funcionan los tests y para qué se usan en el desarrollo de una aplicación.",
+				"thumbnails": {
+					"default": {
+						"url": "https://i.ytimg.com/vi/B_FZvzj6VvA/default.jpg",
+						"width": 120,
+						"height": 90
+					},
+					"medium": {
+						"url": "https://i.ytimg.com/vi/B_FZvzj6VvA/mqdefault.jpg",
+						"width": 320,
+						"height": 180
+					},
+					"high": {
+						"url": "https://i.ytimg.com/vi/B_FZvzj6VvA/hqdefault.jpg",
+						"width": 480,
+						"height": 360
+					},
+					"standard": {
+						"url": "https://i.ytimg.com/vi/B_FZvzj6VvA/sddefault.jpg",
+						"width": 640,
+						"height": 480
+					},
+					"maxres": {
+						"url": "https://i.ytimg.com/vi/B_FZvzj6VvA/maxresdefault.jpg",
+						"width": 1280,
+						"height": 720
+					}
+				},
+				"channelTitle": "Victor Roldan Dev",
+				"localized": {
+					"title": "Curso de Unit Testing con Swift - Xcode",
+					"description": "En esta serie de videos te enseño cómo crear las pruebas unitarias o unit tests en tu aplicación. La idea es que a partir de ahora tengas conocimientos suficientes como para crear tus propios unit tests en tu aplicación. Debes ver todos los videos para entender por completo cómo funcionan los tests y para qué se usan en el desarrollo de una aplicación."
+				}
+			},
+			"contentDetails": {
+				"itemCount": 9
+			}
+		}
+	]
+}
