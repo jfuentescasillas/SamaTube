@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,12 @@
 		1121103F29A4E4C100BA3880 /* SearchVideos.json in Resources */ = {isa = PBXBuildFile; fileRef = 1121103E29A4E4C100BA3880 /* SearchVideos.json */; };
 		1121104229A4E4EB00BA3880 /* PlaylistItems.json in Resources */ = {isa = PBXBuildFile; fileRef = 1121104129A4E4EB00BA3880 /* PlaylistItems.json */; };
 		1121104429A4E6B000BA3880 /* VideoOnlyOne.json in Resources */ = {isa = PBXBuildFile; fileRef = 1121104329A4E6B000BA3880 /* VideoOnlyOne.json */; };
+		11308F3529A7787A0010D98C /* ChannelCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11308F3329A7787A0010D98C /* ChannelCellTableViewCell.swift */; };
+		11308F3629A7787A0010D98C /* ChannelCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11308F3429A7787A0010D98C /* ChannelCellTableViewCell.xib */; };
+		11308F3929A7789D0010D98C /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11308F3729A7789D0010D98C /* VideoCell.swift */; };
+		11308F3A29A7789D0010D98C /* VideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11308F3829A7789D0010D98C /* VideoCell.xib */; };
+		11308F3D29A778B80010D98C /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11308F3B29A778B80010D98C /* PlaylistCell.swift */; };
+		11308F3E29A778B80010D98C /* PlaylistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11308F3C29A778B80010D98C /* PlaylistCell.xib */; };
 		1172E83529A777450012156E /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1172E83429A777450012156E /* MockManager.swift */; };
 		118AFB5F299E35BC0070F9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AFB5E299E35BC0070F9B9 /* AppDelegate.swift */; };
 		118AFB61299E35BC0070F9B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AFB60299E35BC0070F9B9 /* SceneDelegate.swift */; };
@@ -43,6 +49,8 @@
 		11BC9D9B299FB33100BDAA1B /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9D9A299FB33100BDAA1B /* VideoModel.swift */; };
 		11BC9D9D299FB62C00BDAA1B /* ChannelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9D9C299FB62C00BDAA1B /* ChannelsModel.swift */; };
 		11BC9D9F299FB72700BDAA1B /* PlaylistItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9D9E299FB72700BDAA1B /* PlaylistItemsModel.swift */; };
+		11D454B129A92A5100870FAA /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D454B029A92A5100870FAA /* SectionTitleView.swift */; };
+		59A0C25DB5E9E5DEEF80BF5B /* Pods_SamaTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67951BEE8C0DA349AB18DE61 /* Pods_SamaTube.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +63,12 @@
 		1121103E29A4E4C100BA3880 /* SearchVideos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchVideos.json; sourceTree = "<group>"; };
 		1121104129A4E4EB00BA3880 /* PlaylistItems.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlaylistItems.json; sourceTree = "<group>"; };
 		1121104329A4E6B000BA3880 /* VideoOnlyOne.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VideoOnlyOne.json; sourceTree = "<group>"; };
+		11308F3329A7787A0010D98C /* ChannelCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCellTableViewCell.swift; sourceTree = "<group>"; };
+		11308F3429A7787A0010D98C /* ChannelCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCellTableViewCell.xib; sourceTree = "<group>"; };
+		11308F3729A7789D0010D98C /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		11308F3829A7789D0010D98C /* VideoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCell.xib; sourceTree = "<group>"; };
+		11308F3B29A778B80010D98C /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
+		11308F3C29A778B80010D98C /* PlaylistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistCell.xib; sourceTree = "<group>"; };
 		1172E83429A777450012156E /* MockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManager.swift; sourceTree = "<group>"; };
 		118AFB5B299E35BC0070F9B9 /* SamaTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SamaTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118AFB5E299E35BC0070F9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +98,10 @@
 		11BC9D9A299FB33100BDAA1B /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		11BC9D9C299FB62C00BDAA1B /* ChannelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsModel.swift; sourceTree = "<group>"; };
 		11BC9D9E299FB72700BDAA1B /* PlaylistItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistItemsModel.swift; sourceTree = "<group>"; };
+		11D454B029A92A5100870FAA /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
+		67951BEE8C0DA349AB18DE61 /* Pods_SamaTube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamaTube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9639C0B20EDC24FC1B517FCA /* Pods-SamaTube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamaTube.release.xcconfig"; path = "Target Support Files/Pods-SamaTube/Pods-SamaTube.release.xcconfig"; sourceTree = "<group>"; };
+		D6CF6207E457617E767B3FB7 /* Pods-SamaTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamaTube.debug.xcconfig"; path = "Target Support Files/Pods-SamaTube/Pods-SamaTube.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A0C25DB5E9E5DEEF80BF5B /* Pods_SamaTube.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +119,7 @@
 		111F0FD129A231B70048CFB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				11308F3229A7784D0010D98C /* CustomCells */,
 				11B6E7E229A135640008DE33 /* HomeViewController.swift */,
 				11B6E7E329A135640008DE33 /* HomeViewController.xib */,
 			);
@@ -143,11 +163,27 @@
 			path = Mock;
 			sourceTree = "<group>";
 		};
+		11308F3229A7784D0010D98C /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+				11308F3329A7787A0010D98C /* ChannelCellTableViewCell.swift */,
+				11308F3429A7787A0010D98C /* ChannelCellTableViewCell.xib */,
+				11308F3729A7789D0010D98C /* VideoCell.swift */,
+				11308F3829A7789D0010D98C /* VideoCell.xib */,
+				11308F3B29A778B80010D98C /* PlaylistCell.swift */,
+				11308F3C29A778B80010D98C /* PlaylistCell.xib */,
+				11D454B029A92A5100870FAA /* SectionTitleView.swift */,
+			);
+			path = CustomCells;
+			sourceTree = "<group>";
+		};
 		118AFB52299E35BC0070F9B9 = {
 			isa = PBXGroup;
 			children = (
 				118AFB5D299E35BC0070F9B9 /* SamaTube */,
 				118AFB5C299E35BC0070F9B9 /* Products */,
+				7E73ADDE199F1132D063AFDA /* Pods */,
+				88EC7ED24174DC7EA14E13D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -269,6 +305,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7E73ADDE199F1132D063AFDA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6CF6207E457617E767B3FB7 /* Pods-SamaTube.debug.xcconfig */,
+				9639C0B20EDC24FC1B517FCA /* Pods-SamaTube.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		88EC7ED24174DC7EA14E13D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				67951BEE8C0DA349AB18DE61 /* Pods_SamaTube.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,9 +329,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 118AFB6F299E35BF0070F9B9 /* Build configuration list for PBXNativeTarget "SamaTube" */;
 			buildPhases = (
+				4857BD0A3FBCBD6443B8CDF7 /* [CP] Check Pods Manifest.lock */,
 				118AFB57299E35BC0070F9B9 /* Sources */,
 				118AFB58299E35BC0070F9B9 /* Frameworks */,
 				118AFB59299E35BC0070F9B9 /* Resources */,
+				C39EBD0AE534491A441D9588 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -305,7 +360,7 @@
 				};
 			};
 			buildConfigurationList = 118AFB56299E35BC0070F9B9 /* Build configuration list for PBXProject "SamaTube" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -327,8 +382,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11308F3A29A7789D0010D98C /* VideoCell.xib in Resources */,
 				11B6E7ED29A135A10008DE33 /* PlaylistsViewController.xib in Resources */,
 				1121103829A4E40C00BA3880 /* Channel.json in Resources */,
+				11308F3E29A778B80010D98C /* PlaylistCell.xib in Resources */,
 				118AFB6B299E35BF0070F9B9 /* LaunchScreen.storyboard in Resources */,
 				1121103F29A4E4C100BA3880 /* SearchVideos.json in Resources */,
 				11B6E7F529A135CD0008DE33 /* AboutViewController.xib in Resources */,
@@ -340,10 +397,53 @@
 				11B6E7F129A135B90008DE33 /* ChannelsViewController.xib in Resources */,
 				1121104229A4E4EB00BA3880 /* PlaylistItems.json in Resources */,
 				1121103A29A4E45200BA3880 /* Playlists.json in Resources */,
+				11308F3629A7787A0010D98C /* ChannelCellTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4857BD0A3FBCBD6443B8CDF7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SamaTube-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C39EBD0AE534491A441D9588 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SamaTube/Pods-SamaTube-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SamaTube/Pods-SamaTube-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SamaTube/Pods-SamaTube-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		118AFB57299E35BC0070F9B9 /* Sources */ = {
@@ -355,14 +455,17 @@
 				11BC9D99299F84AE00BDAA1B /* PlaylistModel.swift in Sources */,
 				111F0FD829A2342F0048CFB3 /* HomePresenter.swift in Sources */,
 				11B6E7E829A1357B0008DE33 /* VideosViewController.swift in Sources */,
+				11308F3929A7789D0010D98C /* VideoCell.swift in Sources */,
 				118AFB5F299E35BC0070F9B9 /* AppDelegate.swift in Sources */,
 				1121103329A4E19C00BA3880 /* HomeProviderMock.swift in Sources */,
 				1121103629A4E1DF00BA3880 /* Utils.swift in Sources */,
 				11B6E7EC29A135A10008DE33 /* PlaylistsViewController.swift in Sources */,
 				11B6E7FC29A145960008DE33 /* RequestModel.swift in Sources */,
+				11308F3D29A778B80010D98C /* PlaylistCell.swift in Sources */,
 				11BC9D9D299FB62C00BDAA1B /* ChannelsModel.swift in Sources */,
 				1172E83529A777450012156E /* MockManager.swift in Sources */,
 				11BC9D9B299FB33100BDAA1B /* VideoModel.swift in Sources */,
+				11308F3529A7787A0010D98C /* ChannelCellTableViewCell.swift in Sources */,
 				11B6E7E429A135640008DE33 /* HomeViewController.swift in Sources */,
 				11BC9D9F299FB72700BDAA1B /* PlaylistItemsModel.swift in Sources */,
 				111F0FD629A2320E0048CFB3 /* HomeProvider.swift in Sources */,
@@ -370,6 +473,7 @@
 				11B6E7F829A145760008DE33 /* ServiceLayer.swift in Sources */,
 				11B6E7F429A135CD0008DE33 /* AboutViewController.swift in Sources */,
 				11B6E7F029A135B90008DE33 /* ChannelsViewController.swift in Sources */,
+				11D454B129A92A5100870FAA /* SectionTitleView.swift in Sources */,
 				118AFB61299E35BC0070F9B9 /* SceneDelegate.swift in Sources */,
 				11B6E7DA29A1333F0008DE33 /* RootPageViewController.swift in Sources */,
 				11B6E7FF29A145CA0008DE33 /* Constants.swift in Sources */,
@@ -514,6 +618,7 @@
 		};
 		118AFB70299E35BF0070F9B9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6CF6207E457617E767B3FB7 /* Pods-SamaTube.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -542,6 +647,7 @@
 		};
 		118AFB71299E35BF0070F9B9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9639C0B20EDC24FC1B517FCA /* Pods-SamaTube.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -19,7 +19,7 @@ struct ChannelsModel: Decodable {
 
 // MARK: - Item
 struct ChannelsItem: Decodable {
-	let kind, etag, id: String?
+	let kind, id: String?
 	let snippet: ChannelsSnippet?
 	let statistics: ChannelsStatistics?
 	let brandingSettings: ChannelsBrandingSettings?
