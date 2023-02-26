@@ -10,6 +10,9 @@ import Kingfisher
 
 
 class ChannelCellTableViewCell: UITableViewCell {
+	// MARK: - Properties
+	var didTapDotsBtn: (() -> Void)?
+	
 	// MARK: - Elements in XIB
 	@IBOutlet weak var bannerImgView: UIImageView!
 	@IBOutlet weak var profileImgView: UIImageView!
@@ -19,8 +22,7 @@ class ChannelCellTableViewCell: UITableViewCell {
 	@IBOutlet weak var numberSubscribersLbl: UILabel!
 	@IBOutlet weak var channelDescriptionLbl: UILabel!
 	
-	
-	
+		
 	// MARK: - Life Cycle
 	override func awakeFromNib() {
         super.awakeFromNib()
@@ -60,5 +62,13 @@ class ChannelCellTableViewCell: UITableViewCell {
 		else { return }
 		
 		profileImgView.kf.setImage(with: urlProfileImg)
+	}
+	
+	
+	// MARK: - Action Buttons
+	@IBAction func dotsBtnPressed(_ sender: Any) {
+		guard let tap = didTapDotsBtn else { return }
+		
+		tap()
 	}
 }

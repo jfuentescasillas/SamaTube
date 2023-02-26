@@ -11,6 +11,9 @@ import Kingfisher
 
 
 class PlaylistCell: UITableViewCell {
+	// MARK: - Properties
+	var didTapDotsBtn: (() -> Void)?
+	
 	// MARK: - Elements in XIB
 	@IBOutlet weak var videoImgView: UIImageView!
 	@IBOutlet weak var videoTitleLbl: UILabel!
@@ -49,5 +52,13 @@ class PlaylistCell: UITableViewCell {
 		videoTitleLbl.text = model.snippet.title
 		videoCountLbl.text = "\(model.contentDetails.itemCount) videos"
 		videoCountOverlay.text = "\(model.contentDetails.itemCount)"
+	}
+	
+	
+	// MARK: - Action Buttons
+	@IBAction func dotsBtnPressed(_ sender: Any) {
+		guard let tap = didTapDotsBtn else { return }
+		
+		tap()
 	}
 }

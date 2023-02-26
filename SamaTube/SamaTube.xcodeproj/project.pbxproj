@@ -16,6 +16,9 @@
 		1121103F29A4E4C100BA3880 /* SearchVideos.json in Resources */ = {isa = PBXBuildFile; fileRef = 1121103E29A4E4C100BA3880 /* SearchVideos.json */; };
 		1121104229A4E4EB00BA3880 /* PlaylistItems.json in Resources */ = {isa = PBXBuildFile; fileRef = 1121104129A4E4EB00BA3880 /* PlaylistItems.json */; };
 		1121104429A4E6B000BA3880 /* VideoOnlyOne.json in Resources */ = {isa = PBXBuildFile; fileRef = 1121104329A4E6B000BA3880 /* VideoOnlyOne.json */; };
+		1125A4EF29AB6A9700D6BDF7 /* BottomSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125A4ED29AB6A9700D6BDF7 /* BottomSheet.swift */; };
+		1125A4F029AB6A9700D6BDF7 /* BottomSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1125A4EE29AB6A9700D6BDF7 /* BottomSheet.xib */; };
+		1125A4F329ABCD0900D6BDF7 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1125A4F229ABCD0900D6BDF7 /* UIViewExt.swift */; };
 		11308F3529A7787A0010D98C /* ChannelCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11308F3329A7787A0010D98C /* ChannelCellTableViewCell.swift */; };
 		11308F3629A7787A0010D98C /* ChannelCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11308F3429A7787A0010D98C /* ChannelCellTableViewCell.xib */; };
 		11308F3929A7789D0010D98C /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11308F3729A7789D0010D98C /* VideoCell.swift */; };
@@ -63,6 +66,9 @@
 		1121103E29A4E4C100BA3880 /* SearchVideos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = SearchVideos.json; sourceTree = "<group>"; };
 		1121104129A4E4EB00BA3880 /* PlaylistItems.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PlaylistItems.json; sourceTree = "<group>"; };
 		1121104329A4E6B000BA3880 /* VideoOnlyOne.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = VideoOnlyOne.json; sourceTree = "<group>"; };
+		1125A4ED29AB6A9700D6BDF7 /* BottomSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheet.swift; sourceTree = "<group>"; };
+		1125A4EE29AB6A9700D6BDF7 /* BottomSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomSheet.xib; sourceTree = "<group>"; };
+		1125A4F229ABCD0900D6BDF7 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		11308F3329A7787A0010D98C /* ChannelCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelCellTableViewCell.swift; sourceTree = "<group>"; };
 		11308F3429A7787A0010D98C /* ChannelCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChannelCellTableViewCell.xib; sourceTree = "<group>"; };
 		11308F3729A7789D0010D98C /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
@@ -119,6 +125,7 @@
 		111F0FD129A231B70048CFB3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1125A4E829AB680200D6BDF7 /* BottomSheet */,
 				11308F3229A7784D0010D98C /* CustomCells */,
 				11B6E7E229A135640008DE33 /* HomeViewController.swift */,
 				11B6E7E329A135640008DE33 /* HomeViewController.xib */,
@@ -161,6 +168,23 @@
 				1121104329A4E6B000BA3880 /* VideoOnlyOne.json */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		1125A4E829AB680200D6BDF7 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				1125A4ED29AB6A9700D6BDF7 /* BottomSheet.swift */,
+				1125A4EE29AB6A9700D6BDF7 /* BottomSheet.xib */,
+			);
+			path = BottomSheet;
+			sourceTree = "<group>";
+		};
+		1125A4F129ABCCF700D6BDF7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1125A4F229ABCD0900D6BDF7 /* UIViewExt.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		11308F3229A7784D0010D98C /* CustomCells */ = {
@@ -286,6 +310,7 @@
 		11B6E7FD29A145C10008DE33 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				1125A4F129ABCCF700D6BDF7 /* Extensions */,
 				1121103429A4E1CC00BA3880 /* Mock */,
 				11B6E7FE29A145CA0008DE33 /* Constants.swift */,
 				1121103529A4E1DF00BA3880 /* Utils.swift */,
@@ -382,6 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1125A4F029AB6A9700D6BDF7 /* BottomSheet.xib in Resources */,
 				11308F3A29A7789D0010D98C /* VideoCell.xib in Resources */,
 				11B6E7ED29A135A10008DE33 /* PlaylistsViewController.xib in Resources */,
 				1121103829A4E40C00BA3880 /* Channel.json in Resources */,
@@ -452,6 +478,7 @@
 			files = (
 				118AFB63299E35BC0070F9B9 /* ViewController.swift in Sources */,
 				11B6E7FA29A145800008DE33 /* NetworkError.swift in Sources */,
+				1125A4EF29AB6A9700D6BDF7 /* BottomSheet.swift in Sources */,
 				11BC9D99299F84AE00BDAA1B /* PlaylistModel.swift in Sources */,
 				111F0FD829A2342F0048CFB3 /* HomePresenter.swift in Sources */,
 				11B6E7E829A1357B0008DE33 /* VideosViewController.swift in Sources */,
@@ -473,6 +500,7 @@
 				11B6E7F829A145760008DE33 /* ServiceLayer.swift in Sources */,
 				11B6E7F429A135CD0008DE33 /* AboutViewController.swift in Sources */,
 				11B6E7F029A135B90008DE33 /* ChannelsViewController.swift in Sources */,
+				1125A4F329ABCD0900D6BDF7 /* UIViewExt.swift in Sources */,
 				11D454B129A92A5100870FAA /* SectionTitleView.swift in Sources */,
 				118AFB61299E35BC0070F9B9 /* SceneDelegate.swift in Sources */,
 				11B6E7DA29A1333F0008DE33 /* RootPageViewController.swift in Sources */,
