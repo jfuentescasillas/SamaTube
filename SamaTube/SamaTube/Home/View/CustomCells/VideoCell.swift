@@ -8,6 +8,9 @@
 import UIKit
 
 class VideoCell: UITableViewCell {
+	// MARK: - Properties
+	var didTapDotsBtn: (() -> Void)?
+	
 	// MARK: - Elements in XIB
 	@IBOutlet weak var videoImgView: UIImageView!
 	@IBOutlet weak var videoTitleNameLbl: UILabel!
@@ -61,5 +64,13 @@ class VideoCell: UITableViewCell {
 			print("ERROR. The model received is from another type: \(model)")
 			print("--------------")
 		}
+	}
+	
+	
+	// MARK: - Action Buttons
+	@IBAction func dotsBtnPressed(_ sender: Any) {
+		guard let tap = didTapDotsBtn else { return }
+		
+		tap()
 	}
 }

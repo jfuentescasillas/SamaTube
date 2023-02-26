@@ -59,14 +59,26 @@
                             <constraint firstAttribute="height" constant="13" id="IHD-dw-P4Q"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rj7-6w-E0R">
+                        <rect key="frame" x="469" y="0.0" width="13" height="13"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain"/>
+                        <connections>
+                            <action selector="dotsBtnPressed:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="irp-zz-Z0v"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="60f-pT-64p" secondAttribute="trailing" constant="6" id="Eml-HS-ick"/>
+                    <constraint firstItem="Rj7-6w-E0R" firstAttribute="centerY" secondItem="60f-pT-64p" secondAttribute="centerY" id="JE6-oS-ubQ"/>
+                    <constraint firstItem="Rj7-6w-E0R" firstAttribute="height" secondItem="60f-pT-64p" secondAttribute="height" id="UGg-4r-qBu"/>
+                    <constraint firstItem="Rj7-6w-E0R" firstAttribute="width" secondItem="60f-pT-64p" secondAttribute="width" id="adL-Hk-o78"/>
                     <constraint firstItem="60f-pT-64p" firstAttribute="top" secondItem="yhu-e9-ldu" secondAttribute="top" id="dGn-SM-77W"/>
                     <constraint firstItem="fhj-bm-VR5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="eqy-xd-bA9"/>
                     <constraint firstItem="fhj-bm-VR5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fLI-sx-kzL"/>
                     <constraint firstAttribute="bottom" secondItem="fhj-bm-VR5" secondAttribute="bottom" constant="14" id="kfe-CH-C8x"/>
+                    <constraint firstItem="Rj7-6w-E0R" firstAttribute="centerX" secondItem="60f-pT-64p" secondAttribute="centerX" id="mdN-LK-mfJ"/>
                     <constraint firstAttribute="trailing" secondItem="fhj-bm-VR5" secondAttribute="trailing" constant="10" id="v4G-wx-B61"/>
                 </constraints>
             </tableViewCellContentView>

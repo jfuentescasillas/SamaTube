@@ -29,7 +29,8 @@ class HomeViewController: UIViewController {
 		}
     }
 	
-	
+		
+	// MARK: - Private Methods
 	private func configTableView() {
 		let nibChannel = UINib(nibName: "\(ChannelCellTableViewCell.self)", bundle: nil)
 		homeTableView.register(nibChannel, forCellReuseIdentifier: "\(ChannelCellTableViewCell.self)")
@@ -45,6 +46,14 @@ class HomeViewController: UIViewController {
 		homeTableView.dataSource = self
 		homeTableView.delegate = self
 		homeTableView.separatorColor = .clear
+	}
+	
+
+	private func configBtnSheet() {
+		let vc = BottomSheet()
+		vc.modalPresentationStyle = .overCurrentContext
+		
+		self.present(vc, animated: false)
 	}
 }
 
@@ -80,6 +89,13 @@ extension HomeViewController: UITableViewDataSource {
 				return UITableViewCell()
 			}
 			
+			playlistItemsCell.didTapDotsBtn = { [weak self] in
+				guard let self = self else { return }
+				
+				print("DotsButton tapped in playlistItems")
+				
+				self.configBtnSheet()
+			}
 			playlistItemsCell.configCell(model: playlistItems[indexPath.row])
 			
 			return playlistItemsCell
@@ -90,6 +106,13 @@ extension HomeViewController: UITableViewDataSource {
 				return UITableViewCell()
 			}
 			
+			videoCell.didTapDotsBtn = { [weak self] in
+				guard let self = self else { return }
+				
+				print("DotsButton tapped in videoCell")
+				
+				self.configBtnSheet()
+			}
 			videoCell.configCell(model: videos[indexPath.row])
 			
 			return videoCell
@@ -100,6 +123,13 @@ extension HomeViewController: UITableViewDataSource {
 				return UITableViewCell()
 			}
 			
+			playlistCell.didTapDotsBtn = { [weak self] in
+				guard let self = self else { return }
+				
+				print("DotsButton tapped in playlistCell")
+				
+				self.configBtnSheet()
+			}
 			playlistCell.configCell(model: playlist[indexPath.row])
 			
 			return playlistCell
