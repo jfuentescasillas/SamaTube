@@ -32,20 +32,22 @@ class HomeViewController: UIViewController {
 		
 	// MARK: - Private Methods
 	private func configTableView() {
-		let nibChannel = UINib(nibName: "\(ChannelCellTableViewCell.self)", bundle: nil)
-		homeTableView.register(nibChannel, forCellReuseIdentifier: "\(ChannelCellTableViewCell.self)")
+		// This line replaces the let nibChannel. The nibVideo, nibPlaylist and SectionTitleView will be refactored as it was done here
+		homeTableView.register(cell: ChannelCellTableViewCell.self)
+		/*let nibChannel = UINib(nibName: "\(ChannelCellTableViewCell.self)", bundle: nil)
+		homeTableView.register(nibChannel, forCellReuseIdentifier: "\(ChannelCellTableViewCell.self)")*/
 		
-		let nibVideo = UINib(nibName: "\(VideoCell.self)", bundle: nil)
-		homeTableView.register(nibVideo, forCellReuseIdentifier: "\(VideoCell.self)")
+		homeTableView.register(cell: VideoCell.self)
+		homeTableView.register(cell: PlaylistCell.self)
 		
-		let nibPlaylist = UINib(nibName: "\(PlaylistCell.self)", bundle: nil)
-		homeTableView.register(nibPlaylist, forCellReuseIdentifier: "\(PlaylistCell.self)")
-		
-		homeTableView.register(SectionTitleView.self, forHeaderFooterViewReuseIdentifier: "\(SectionTitleView.self)")
+		homeTableView.registerFromClass(headerFooterView: SectionTitleView.self)
+		/*homeTableView.register(SectionTitleView.self, forHeaderFooterViewReuseIdentifier: "\(SectionTitleView.self)")*/
 		
 		homeTableView.dataSource = self
 		homeTableView.delegate = self
 		homeTableView.separatorColor = .clear
+		homeTableView.contentInset = UIEdgeInsets(top: -18, left: 0,
+												  bottom: -40, right: 0)
 	}
 	
 
@@ -54,6 +56,19 @@ class HomeViewController: UIViewController {
 		vc.modalPresentationStyle = .overCurrentContext
 		
 		self.present(vc, animated: false)
+	}
+	
+	
+	// MARK: - Sroll view
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		let pan = scrollView.panGestureRecognizer
+		let velocity = pan.velocity(in: scrollView).y
+		
+		if velocity < -5 {
+			navigationController?.setNavigationBarHidden(true, animated: true)
+		} else if velocity > 5 {
+			navigationController?.setNavigationBarHidden(false, animated: false)
+		}
 	}
 }
 
@@ -74,21 +89,20 @@ extension HomeViewController: UITableViewDataSource {
 		let item = objectList[indexPath.section]
 		
 		if let channel = item as? [ChannelsItem] {
-			guard let channelCell = tableView.dequeueReusableCell(withIdentifier: "\(ChannelCellTableViewCell.self)", for: indexPath) as? ChannelCellTableViewCell
+			let channelCell = tableView.dequeueReusableCell(for: ChannelCellTableViewCell.self, for: indexPath)
+			
+			// The let "channelCell = ..." replaces the code below. For the other cells, the lines similar to this one will be erased and not commented such as here.
+			/*guard let channelCell = tableView.dequeueReusableCell(withIdentifier: "\(ChannelCellTableViewCell.self)", for: indexPath) as? ChannelCellTableViewCell
 			else {
 				return UITableViewCell()
-			}
+			}*/
 			
 			channelCell.configCell(model: channel[indexPath.row])
 			
 			return channelCell
 			
 		} else if let playlistItems = item as? [PlaylistItemsItems] {
-			guard let playlistItemsCell = tableView.dequeueReusableCell(withIdentifier: "\(VideoCell.self)", for: indexPath) as? VideoCell
-			else {
-				return UITableViewCell()
-			}
-			
+			let playlistItemsCell = tableView.dequeueReusableCell(for: VideoCell.self, for: indexPath)
 			playlistItemsCell.didTapDotsBtn = { [weak self] in
 				guard let self = self else { return }
 				
@@ -101,11 +115,7 @@ extension HomeViewController: UITableViewDataSource {
 			return playlistItemsCell
 			
 		} else if let videos = item as? [VideoItem] {
-			guard let videoCell = tableView.dequeueReusableCell(withIdentifier: "\(VideoCell.self)", for: indexPath) as? VideoCell
-			else {
-				return UITableViewCell()
-			}
-			
+			let videoCell = tableView.dequeueReusableCell(for: VideoCell.self, for: indexPath)
 			videoCell.didTapDotsBtn = { [weak self] in
 				guard let self = self else { return }
 				
@@ -118,11 +128,7 @@ extension HomeViewController: UITableViewDataSource {
 			return videoCell
 			
 		} else if let playlist = item as? [PlaylistItem] {
-			guard let playlistCell = tableView.dequeueReusableCell(withIdentifier: "\(PlaylistCell.self)", for: indexPath) as? PlaylistCell
-			else {
-				return UITableViewCell()
-			}
-			
+			let playlistCell = tableView.dequeueReusableCell(for: PlaylistCell.self, for: indexPath)
 			playlistCell.didTapDotsBtn = { [weak self] in
 				guard let self = self else { return }
 				

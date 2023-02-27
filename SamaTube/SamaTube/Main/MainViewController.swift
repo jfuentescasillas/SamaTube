@@ -7,12 +7,14 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: BaseViewController {
 	var rootPageViewController: RootPageViewController!
 	
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		configNavBar()
     }
 	
 	
@@ -21,6 +23,13 @@ class MainViewController: UIViewController {
 			destination.delegateRoot = self
 			rootPageViewController = destination
 		}
+	}
+	
+	
+	// MARK: - Override BaseViewController Methods
+	override func dotsBtnPressed() {
+		super.dotsBtnPressed()
+		print("DotsBtnPressed but it was overriden")
 	}
 }
 
