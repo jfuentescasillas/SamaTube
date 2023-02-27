@@ -36,8 +36,8 @@ class VideoCell: UITableViewCell {
 	// MARK: - Configure Cell
 	// Called from the TableView at HomeViewController
 	func configCell(model: Any) {
-		dotsImgView.image = UIImage(named: "dots")?.withRenderingMode(.alwaysTemplate)
-		dotsImgView.tintColor = UIColor(named: "whiteColor")
+		dotsImgView.image = .dotsImage // UIImage(named: "dots")?.withRenderingMode(.alwaysTemplate)
+		dotsImgView.tintColor = .whiteColor // UIColor(named: "whiteColor")
 		
 		if let videoItem = model as? VideoItem {
 			guard let imgURL = videoItem.snippet?.thumbnails?.medium?.url,

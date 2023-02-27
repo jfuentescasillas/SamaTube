@@ -48,7 +48,7 @@ class SectionTitleView: UITableViewHeaderFooterView {
 		
 		customView.addSubview(title)
 		title.font = .systemFont(ofSize: 13.0)
-		title.textColor = UIColor(named: "whiteColor")
+		title.textColor = .whiteColor // UIColor(named: "whiteColor")
 		
 		NSLayoutConstraint.activate([
 			title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 13.0),
