@@ -56,6 +56,8 @@
 		11B6E7FA29A145800008DE33 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6E7F929A145800008DE33 /* NetworkError.swift */; };
 		11B6E7FC29A145960008DE33 /* RequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6E7FB29A145960008DE33 /* RequestModel.swift */; };
 		11B6E7FF29A145CA0008DE33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B6E7FE29A145CA0008DE33 /* Constants.swift */; };
+		11B7DF4829AE56240085965D /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7DF4629AE56240085965D /* PlayVideoViewController.swift */; };
+		11B7DF4929AE56240085965D /* PlayVideoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11B7DF4729AE56240085965D /* PlayVideoViewController.xib */; };
 		11BC9D99299F84AE00BDAA1B /* PlaylistModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9D98299F84AE00BDAA1B /* PlaylistModel.swift */; };
 		11BC9D9B299FB33100BDAA1B /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9D9A299FB33100BDAA1B /* VideoModel.swift */; };
 		11BC9D9D299FB62C00BDAA1B /* ChannelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9D9C299FB62C00BDAA1B /* ChannelsModel.swift */; };
@@ -119,6 +121,8 @@
 		11B6E7F929A145800008DE33 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		11B6E7FB29A145960008DE33 /* RequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestModel.swift; sourceTree = "<group>"; };
 		11B6E7FE29A145CA0008DE33 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		11B7DF4629AE56240085965D /* PlayVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
+		11B7DF4729AE56240085965D /* PlayVideoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayVideoViewController.xib; sourceTree = "<group>"; };
 		11BC9D98299F84AE00BDAA1B /* PlaylistModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistModel.swift; sourceTree = "<group>"; };
 		11BC9D9A299FB33100BDAA1B /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 		11BC9D9C299FB62C00BDAA1B /* ChannelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsModel.swift; sourceTree = "<group>"; };
@@ -252,6 +256,47 @@
 			path = CustomCells;
 			sourceTree = "<group>";
 		};
+		113336C429AE1F5A0081AC4B /* PlayVideo */ = {
+			isa = PBXGroup;
+			children = (
+				113A453129AE4AAC0070EA15 /* Model */,
+				113336C929AE497B0081AC4B /* View */,
+				113A453029AE4A9F0070EA15 /* Presenter */,
+			);
+			path = PlayVideo;
+			sourceTree = "<group>";
+		};
+		113336C929AE497B0081AC4B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11B7DF4629AE56240085965D /* PlayVideoViewController.swift */,
+				11B7DF4729AE56240085965D /* PlayVideoViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		113A453029AE4A9F0070EA15 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		113A453129AE4AAC0070EA15 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				113A453229AE4ABC0070EA15 /* Provider */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		113A453229AE4ABC0070EA15 /* Provider */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Provider;
+			sourceTree = "<group>";
+		};
 		118AFB52299E35BC0070F9B9 = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +326,7 @@
 				11B6E7DE29A1350F0008DE33 /* Channels */,
 				11B6E7DD29A134FD0008DE33 /* About */,
 				11B6E7D829A1330C0008DE33 /* Main */,
+				113336C429AE1F5A0081AC4B /* PlayVideo */,
 				11BC9D97299F849700BDAA1B /* Model */,
 				118AFB5E299E35BC0070F9B9 /* AppDelegate.swift */,
 				118AFB60299E35BC0070F9B9 /* SceneDelegate.swift */,
@@ -492,6 +538,7 @@
 				118AFB68299E35BF0070F9B9 /* Assets.xcassets in Resources */,
 				1121104429A4E6B000BA3880 /* VideoOnlyOne.json in Resources */,
 				11B6E7E929A1357B0008DE33 /* VideosViewController.xib in Resources */,
+				11B7DF4929AE56240085965D /* PlayVideoViewController.xib in Resources */,
 				118AFB66299E35BC0070F9B9 /* Main.storyboard in Resources */,
 				11B6E7E529A135640008DE33 /* HomeViewController.xib in Resources */,
 				110C883429ACB3A600CF86A6 /* VideoList.json in Resources */,
@@ -562,6 +609,7 @@
 				111F0FD829A2342F0048CFB3 /* HomePresenter.swift in Sources */,
 				11B6E7E829A1357B0008DE33 /* VideosViewController.swift in Sources */,
 				11308F3929A7789D0010D98C /* VideoCell.swift in Sources */,
+				11B7DF4829AE56240085965D /* PlayVideoViewController.swift in Sources */,
 				118AFB5F299E35BC0070F9B9 /* AppDelegate.swift in Sources */,
 				110C882D29ACA4E300CF86A6 /* VideosProvider.swift in Sources */,
 				1121103329A4E19C00BA3880 /* HomeProviderMock.swift in Sources */,
