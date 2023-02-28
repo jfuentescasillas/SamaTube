@@ -5,31 +5,43 @@
 //  Created by Jorge Fuentes Casillas on 18/02/23.
 //
 
+
 import UIKit
+
+
+enum ScrollDirection {
+	case goingLeft
+	case goingRight
+}
 
 
 // It's AnyObject because the variable "delegateRoot" will be declared as weak
 protocol RootPageProtocol: AnyObject {
 	func currentPage(idx: Int)
+	func scrollDetails(direction: ScrollDirection, percent: CGFloat, index: Int)
 }
 
 
 // MARK: - Main class. RootPageViewController
 class RootPageViewController: UIPageViewController {
-	var subViewControllers = [UIViewController]()
-	var currentIdx: Int = 0
 	weak var delegateRoot: RootPageProtocol?
+	public var subViewControllers = [UIViewController]()
+	public var currentIdx: Int = 0
+	public var startOffset: CGFloat = 0
+	public var currentPage: Int = 0
 	
-
+	
 	// MARK: - Life cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	override func viewDidLoad() {
+		super.viewDidLoad()
 		
 		delegate = self
 		dataSource = self
 		
+		delegateRoot?.currentPage(idx: 0)
 		setupViewControllers()
-    }
+		setScrollViewDelegate()
+	}
 	
 	
 	// MARK: - Setup viewControllers
@@ -51,6 +63,15 @@ class RootPageViewController: UIPageViewController {
 	
 	public func setviewControllerFromIndex(idx: Int, direction: NavigationDirection, animated: Bool = true) {
 		setViewControllers([subViewControllers[idx]], direction: direction, animated: animated)
+	}
+	
+	
+	// Needed to move underline when scrolling between views
+	public func setScrollViewDelegate() {
+		guard let scrollView = view.subviews.filter({ $0 is UIScrollView }).first as? UIScrollView
+		else { return }
+		
+		scrollView.delegate = self
 	}
 }
 
@@ -90,9 +111,37 @@ extension RootPageViewController: UIPageViewControllerDelegate {
 	func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
 		if let idx = pageViewController.viewControllers?.first?.view.tag {
 			currentIdx = idx
-			delegateRoot?.currentPage(idx: idx) 
+			delegateRoot?.currentPage(idx: idx)
 		}
 		
 		print("Finished: \(finished)")
+	}
+}
+
+
+// MARK: - Extension. UIScrollViewDelegate
+extension RootPageViewController: UIScrollViewDelegate {
+	func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+		startOffset = scrollView.contentOffset.x
+		print("Start Offset: \(startOffset)")
+	}
+	
+	
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		var direction = 0 // Scroll stopped
+		
+		if startOffset < scrollView.contentOffset.x {
+			direction = 1 // To the right
+		} else if startOffset > scrollView.contentOffset.x {
+			direction = -1 // To the left
+		}
+		
+		let positionFromStartOfCurrentPage = abs(startOffset - scrollView.contentOffset.x)
+		let percent = positionFromStartOfCurrentPage / self.view.frame.width
+		
+		delegateRoot?.scrollDetails(direction: (direction == 1) ? .goingRight : .goingLeft, percent: percent, index: currentPage)
+		
+		print("Percent: \(percent)")
+		print("Direction: \(direction)")
 	}
 }

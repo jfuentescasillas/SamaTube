@@ -61,6 +61,9 @@
 		11BC9D9D299FB62C00BDAA1B /* ChannelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9D9C299FB62C00BDAA1B /* ChannelsModel.swift */; };
 		11BC9D9F299FB72700BDAA1B /* PlaylistItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11BC9D9E299FB72700BDAA1B /* PlaylistItemsModel.swift */; };
 		11D454B129A92A5100870FAA /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D454B029A92A5100870FAA /* SectionTitleView.swift */; };
+		11F2D7C829AD0F3D0070A275 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D7C729AD0F3D0070A275 /* TabsView.swift */; };
+		11F2D7CC29AD11DD0070A275 /* OptionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D7CA29AD11DD0070A275 /* OptionsCollectionViewCell.swift */; };
+		11F2D7CD29AD11DD0070A275 /* OptionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F2D7CB29AD11DD0070A275 /* OptionsCollectionViewCell.xib */; };
 		59A0C25DB5E9E5DEEF80BF5B /* Pods_SamaTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67951BEE8C0DA349AB18DE61 /* Pods_SamaTube.framework */; };
 /* End PBXBuildFile section */
 
@@ -121,6 +124,9 @@
 		11BC9D9C299FB62C00BDAA1B /* ChannelsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsModel.swift; sourceTree = "<group>"; };
 		11BC9D9E299FB72700BDAA1B /* PlaylistItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistItemsModel.swift; sourceTree = "<group>"; };
 		11D454B029A92A5100870FAA /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
+		11F2D7C729AD0F3D0070A275 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
+		11F2D7CA29AD11DD0070A275 /* OptionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCollectionViewCell.swift; sourceTree = "<group>"; };
+		11F2D7CB29AD11DD0070A275 /* OptionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsCollectionViewCell.xib; sourceTree = "<group>"; };
 		67951BEE8C0DA349AB18DE61 /* Pods_SamaTube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SamaTube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9639C0B20EDC24FC1B517FCA /* Pods-SamaTube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamaTube.release.xcconfig"; path = "Target Support Files/Pods-SamaTube/Pods-SamaTube.release.xcconfig"; sourceTree = "<group>"; };
 		D6CF6207E457617E767B3FB7 /* Pods-SamaTube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SamaTube.debug.xcconfig"; path = "Target Support Files/Pods-SamaTube/Pods-SamaTube.debug.xcconfig"; sourceTree = "<group>"; };
@@ -290,6 +296,7 @@
 		11B6E7D829A1330C0008DE33 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				11F2D7C629AD0F300070A275 /* TabsView */,
 				11B6E7D929A1333F0008DE33 /* RootPageViewController.swift */,
 				11B6E7DB29A133530008DE33 /* MainViewController.swift */,
 			);
@@ -378,6 +385,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		11F2D7C629AD0F300070A275 /* TabsView */ = {
+			isa = PBXGroup;
+			children = (
+				11F2D7C929AD11A70070A275 /* Cell */,
+				11F2D7C729AD0F3D0070A275 /* TabsView.swift */,
+			);
+			path = TabsView;
+			sourceTree = "<group>";
+		};
+		11F2D7C929AD11A70070A275 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				11F2D7CA29AD11DD0070A275 /* OptionsCollectionViewCell.swift */,
+				11F2D7CB29AD11DD0070A275 /* OptionsCollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		7E73ADDE199F1132D063AFDA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -458,6 +483,7 @@
 				1125A4F029AB6A9700D6BDF7 /* BottomSheet.xib in Resources */,
 				11308F3A29A7789D0010D98C /* VideoCell.xib in Resources */,
 				11B6E7ED29A135A10008DE33 /* PlaylistsViewController.xib in Resources */,
+				11F2D7CD29AD11DD0070A275 /* OptionsCollectionViewCell.xib in Resources */,
 				1121103829A4E40C00BA3880 /* Channel.json in Resources */,
 				11308F3E29A778B80010D98C /* PlaylistCell.xib in Resources */,
 				118AFB6B299E35BF0070F9B9 /* LaunchScreen.storyboard in Resources */,
@@ -527,6 +553,7 @@
 			files = (
 				118AFB63299E35BC0070F9B9 /* ViewController.swift in Sources */,
 				11B6E7FA29A145800008DE33 /* NetworkError.swift in Sources */,
+				11F2D7C829AD0F3D0070A275 /* TabsView.swift in Sources */,
 				1125A4EF29AB6A9700D6BDF7 /* BottomSheet.swift in Sources */,
 				11BC9D99299F84AE00BDAA1B /* PlaylistModel.swift in Sources */,
 				110C882F29ACA4F000CF86A6 /* VideosPresenter.swift in Sources */,
@@ -553,6 +580,7 @@
 				111F0FD629A2320E0048CFB3 /* HomeProvider.swift in Sources */,
 				11B6E7DC29A133530008DE33 /* MainViewController.swift in Sources */,
 				11B6E7F829A145760008DE33 /* ServiceLayer.swift in Sources */,
+				11F2D7CC29AD11DD0070A275 /* OptionsCollectionViewCell.swift in Sources */,
 				11B6E7F429A135CD0008DE33 /* AboutViewController.swift in Sources */,
 				11B6E7F029A135B90008DE33 /* ChannelsViewController.swift in Sources */,
 				1125A4F329ABCD0900D6BDF7 /* UIViewExt.swift in Sources */,

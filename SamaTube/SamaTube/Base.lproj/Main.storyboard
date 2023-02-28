@@ -25,22 +25,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cFT-he-QOf">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <rect key="frame" x="0.0" y="148" width="393" height="670"/>
                                 <connections>
                                     <segue destination="zzm-cj-ztB" kind="embed" id="fdW-QK-gRe"/>
                                 </connections>
                             </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7fg-Lm-bxz" customClass="TabsView" customModule="SamaTube" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="103" width="393" height="45"/>
+                                <color key="backgroundColor" name="backgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="kha-oZ-evb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cFT-he-QOf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Ixm-ae-nFy"/>
+                            <constraint firstItem="7fg-Lm-bxz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="GOI-q2-jYF"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cFT-he-QOf" secondAttribute="bottom" id="T9g-8M-vSP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cFT-he-QOf" secondAttribute="trailing" id="bnd-kH-VVJ"/>
+                            <constraint firstItem="7fg-Lm-bxz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="eaG-k3-iLi"/>
                             <constraint firstItem="cFT-he-QOf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fal-Gu-ncj"/>
+                            <constraint firstItem="cFT-he-QOf" firstAttribute="top" secondItem="7fg-Lm-bxz" secondAttribute="bottom" id="hac-OO-ZQz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7fg-Lm-bxz" secondAttribute="trailing" id="y6C-0e-RVR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="57Z-1D-rHG"/>
+                    <connections>
+                        <outlet property="tabsView" destination="7fg-Lm-bxz" id="k7c-tk-LcH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
