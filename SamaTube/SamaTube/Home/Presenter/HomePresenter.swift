@@ -9,12 +9,12 @@
 import Foundation
 
 
-protocol HomeViewProtocol: AnyObject {
+protocol HomeViewProtocol: AnyObject, BaseViewProtocol {
 	func getData(list: [[Any]], sectionTitleList: [String])
 }
 
 
-class HomePresenter {
+@MainActor class HomePresenter {
 	var provider: HomeProviderProtocol
 	weak var delegate: HomeViewProtocol?
 	private var objectList = [[Any]]()
@@ -65,8 +65,14 @@ class HomePresenter {
 			
 			// Delegate
 			delegate?.getData(list: objectList, sectionTitleList: sectionTitlelist)
-		} catch {
-			print(error)
+		} catch let error {
+			delegate?.showError(error.localizedDescription, callback: {
+				Task { [weak self] in
+					guard let self = self else { return }
+					
+					await self.getHomeObjects()
+				}
+			})
 		}
 	}
 	
@@ -77,8 +83,14 @@ class HomePresenter {
 			
 			return playlistItems
 		} catch {
-			print("Error en PlaylistItems method")
-			
+			delegate?.showError(error.localizedDescription, callback: {
+				Task { [weak self] in
+					guard let self = self else { return }
+					
+					await self.getHomeObjects()
+				}
+			})
+
 			return nil
 		}
 	}

@@ -9,7 +9,7 @@ import UIKit
 import youtube_ios_player_helper
 
 
-class PlayVideoViewController: UIViewController {
+class PlayVideoViewController: BaseViewController {
 	// MARK: - Properties
 	lazy var presenter = PlayVideoPresenter(delegate: self)
 	public var videoId: String = ""
@@ -72,7 +72,7 @@ extension PlayVideoViewController: YTPlayerViewDelegate {
 
 // MARK: - Extension. PlayVideoViewProtocol
 extension PlayVideoViewController: PlayVideoViewProtocol {
-	func loadingView(_ state: LoadingViewState) {
+	/*func loadingView(_ state: LoadingViewState) {
 		
 	}
 	
@@ -80,7 +80,7 @@ extension PlayVideoViewController: PlayVideoViewProtocol {
 	func showError(_ error: String, callback: (() -> Void)?) {
 		
 	}
-	
+*/
 	
 	func getRelatedVideosFinished() {
 		print("***** Response in GettingVideos. Finished *****")
