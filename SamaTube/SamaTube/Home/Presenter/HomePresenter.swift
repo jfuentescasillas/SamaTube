@@ -9,12 +9,12 @@
 import Foundation
 
 
-protocol HomeViewProtocol: AnyObject {
+protocol HomeViewProtocol: AnyObject, BaseViewProtocol {
 	func getData(list: [[Any]], sectionTitleList: [String])
 }
 
 
-class HomePresenter {
+@MainActor class HomePresenter {
 	var provider: HomeProviderProtocol
 	weak var delegate: HomeViewProtocol?
 	private var objectList = [[Any]]()
@@ -37,12 +37,20 @@ class HomePresenter {
 		objectList.removeAll()
 		sectionTitlelist.removeAll()
 		
+		// Show Activity Indicator
+		delegate?.loadingView(.show)
+		
 		// Ready to be called
 		async let channels = try await provider.getChannel(channelID: Constants.channelID).items
 		async let playlist = try await provider.getPlaylists(channelID: Constants.channelID).items
 		async let videos   = try await provider.getVideos(searchString: "", channelID: Constants.channelID).items
 		
 		do {
+			// Hide Activity Indicator because data was successfully (or not) loaded
+			defer {
+				delegate?.loadingView(.hide)
+			}
+			
 			let (resChannels, resPlaylist, resVideos) = await (try channels, try playlist, try videos)
 			// Index 0
 			objectList.append(resChannels)
@@ -65,8 +73,16 @@ class HomePresenter {
 			
 			// Delegate
 			delegate?.getData(list: objectList, sectionTitleList: sectionTitlelist)
-		} catch {
-			print(error)
+		} catch let error {
+			delegate?.showError(error.localizedDescription, callback: {
+				Task { [weak self] in
+					guard let self = self else { return }
+					
+					await self.getHomeObjects()
+				}
+			})
+			
+			
 		}
 	}
 	
@@ -77,8 +93,14 @@ class HomePresenter {
 			
 			return playlistItems
 		} catch {
-			print("Error en PlaylistItems method")
-			
+			delegate?.showError(error.localizedDescription, callback: {
+				Task { [weak self] in
+					guard let self = self else { return }
+					
+					await self.getHomeObjects()
+				}
+			})
+
 			return nil
 		}
 	}

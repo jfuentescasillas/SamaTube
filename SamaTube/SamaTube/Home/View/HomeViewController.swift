@@ -9,7 +9,7 @@ import UIKit
 import FloatingPanel
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
 	// MARK: - Properties
 	lazy var presenter = HomePresenter(delegate: self)
 	private var objectList = [[Any]]()
