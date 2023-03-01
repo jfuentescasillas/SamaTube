@@ -29,7 +29,7 @@ class VideoHeaderCell: UITableViewCell {
 	}
 	
 	
-	public func configCell(videoModel: VideoItem, channelModel: ChannelsItem) {
+	public func configCell(videoModel: VideoItem, channelModel: ChannelsItem?) {
 		configHorizontalButtons(videoModel)
 		
 		commentConfig()

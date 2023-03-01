@@ -214,7 +214,7 @@ extension HomeViewController: UITableViewDelegate {
 				}
 			}
 		} else {
-			print("-------------------")
+			print("-----------FALSE-----------")
 			presentViewPanel(with: videoID)
 		}
 	}
@@ -270,7 +270,7 @@ extension HomeViewController: FloatingPanelControllerDelegate {
 		isFloatingPanelPresented = true
 		
 		fpc.set(contentViewController: contentVC)
-		fpc.track(scrollView: contentVC.videosTableView)
+		fpc.track(scrollView: contentVC.tableViewVideos)
 		
 		present(fpc, animated: true)
 	}
@@ -282,12 +282,14 @@ extension HomeViewController: FloatingPanelControllerDelegate {
 	}
 	
 	
-	func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-		/*if targetState.pointee != .full {
-		 
-		 } else {
-		 
-		 }*/
+	func floatingPanelWillEndDragging(_ vc: FloatingPanelController, withVelocity velocity: CGPoint, targetState: UnsafeMutablePointer<FloatingPanelState>) {
+		if targetState.pointee != .full {
+			NotificationCenter.default.post(name: .viewPosition, object: ["position":"bottom"])
+			fpc?.surfaceView.contentPadding = .init(top: 0, left: 0, bottom: 0, right: 0)
+		} else {
+			NotificationCenter.default.post(name: .viewPosition, object: ["position":"top"])
+			fpc?.surfaceView.contentPadding = .init(top: -48, left: 0, bottom: -48, right: 0)
+		}
 	}
 }
 
