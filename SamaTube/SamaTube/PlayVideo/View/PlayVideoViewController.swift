@@ -108,7 +108,7 @@ extension PlayVideoViewController: UITableViewDataSource {
 			guard let video = item[indexPath.row] as? VideoItem else { return UITableViewCell() }
 			
 			let videoHeaderCell = tableView.dequeueReusableCell(for: VideoHeaderCell.self, for: indexPath)
-			videoHeaderCell.configCell(videoModel: video, channelModel: presenter.channelModel)
+			videoHeaderCell.configCell(videoModel: video, channelModel: presenter.channelModel!)
 			videoHeaderCell.selectionStyle = .none
 			
 			return videoHeaderCell

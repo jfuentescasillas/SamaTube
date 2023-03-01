@@ -2,13 +2,13 @@
 //  VideoHeaderCell.swift
 //  SamaTube
 //
-//  Created by Jorge Fuentes Casillas on 28/02/23.
+//  Created by Jorge Fuentes Casillas on 01/03/23.
 //
 
 import UIKit
 
+
 class VideoHeaderCell: UITableViewCell {
-	// MARK: - Elements in XIB
 	@IBOutlet weak var videoTitle: UILabel!
 	@IBOutlet weak var videoStatistics: UILabel!
 	@IBOutlet weak var profileImage: UIImageView!
@@ -23,42 +23,13 @@ class VideoHeaderCell: UITableViewCell {
 	@IBOutlet weak var seeAllCommentButton: UIButton!
 	
 	
-	// MARK: - Life cycle
 	override func awakeFromNib() {
 		super.awakeFromNib()
 		// Initialization code
 	}
 	
 	
-	// MARK: - Custom Methods
-	public func configCell(videoModel: VideoItem, channelModel: ChannelsItem?) {
-		configHorizontalButtons(videoModel)
-		
-		commentConfig()
-		
-		/*videoTitle.text = videoModel.snippet?.title
-		videoTitle.textColor = .whiteColor*/
-		
-		let viewCount = videoModel.statistics?.viewCount ?? "0"
-		let viewPlural = (Int(viewCount)!) > 0 ? "views" : "view"
-		var tags = ""
-		
-		if let tagsArray = videoModel.snippet?.tags?.enumerated().filter({$0.offset<3}).map({"#"+$0.element}){
-			tags = tagsArray.joined(separator: " ")
-		}
-		
-		let published = "2 weeks ago"//videoModel.snippet?.publishedDateFriendly ?? ""
-		let wholeString = "\(viewCount) \(viewPlural) · \(published) \(tags)"
-		
-		/*videoStatistics.text = wholeString
-		videoStatistics.textColor = .grayColor
-		videoStatistics.highlight(searchedText: tags, color: .systemBlue)*/
-		
-		//channelDetails(videoModel, channelModel)
-	}
-	
-	
-	private func configHorizontalButtons(_ videoModel: VideoItem) {
+	func configHorizontalButtons(_ videoModel: VideoItem) {
 		let options = [
 			VideoButtonIcon(title: videoModel.statistics?.likeCount ?? "-", icon: .like),
 			VideoButtonIcon(title: "Dislike", icon: .dislike),
@@ -68,18 +39,36 @@ class VideoHeaderCell: UITableViewCell {
 			VideoButtonIcon(title: "Airplay", icon: .airplay),
 		]
 		
-		//buttonsIconListView.buttonIconsList = options
-//		buttonsIconListView.delegate = self
-//		buttonsIconListView.buildView()
+		buttonsIconListView.buttonIconsList = options
+		buttonsIconListView.delegate = self
+		buttonsIconListView.buildView()
 	}
 	
 	
-	private func commentConfig() {
-		/*let randomInt = Int.random(in: 100..<1000)
-		commentTitle.text = "Comments \(randomInt)"
-		commentProfileImage.image = UIImage.personCircleFill
-		commentProfileImage.tintColor = .whiteColor
-		comment.text = "Excelente información. Gracias."*/
+	func configCell(videoModel: VideoItem, channelModel: ChannelsItem) {
+		configHorizontalButtons(videoModel)
+		
+		commentConfig()
+		
+		videoTitle.text = videoModel.snippet?.title
+		videoTitle.textColor = .whiteColor
+		
+		let viewCount = videoModel.statistics?.viewCount ?? "0"
+		let viewPlural = (Int(viewCount)!) > 0 ? "views": "view"
+		var tags = ""
+		
+		if let tagsArray = videoModel.snippet?.tags?.enumerated().filter({$0.offset<3}).map({"#"+$0.element}) {
+			tags = tagsArray.joined(separator: " ")
+		}
+		
+		let published = "2 weeks ago" //videoModel.snippet?.publishedDateFriendly ?? ""
+		let wholeString = "\(viewCount) \(viewPlural) · \(published) \(tags)"
+		
+		videoStatistics.text = wholeString
+		videoStatistics.textColor = .grayColor
+		videoStatistics.highlight(searchedText: tags, color: .systemBlue)
+		
+		channelDetails(videoModel, channelModel)
 	}
 	
 	
@@ -103,8 +92,17 @@ class VideoHeaderCell: UITableViewCell {
 		profileImage.kf.setImage(with: url)
 		profileImage.layer.cornerRadius = 20.0
 	}
+	
+	
+	private func commentConfig() {
+		let randomInt = Int.random(in: 100..<1000)
+		commentTitle.text = "Comments \(randomInt)"
+		commentProfileImage.image = UIImage.personCircleFill
+		commentProfileImage.tintColor = .whiteColor
+		comment.text = "Excelente información. Gracias."
+	}
 }
-
+ 
 
 // MARK: - Extension. ButtonIconListProtocol
 extension VideoHeaderCell: ButtonIconListProtocol {
@@ -112,3 +110,4 @@ extension VideoHeaderCell: ButtonIconListProtocol {
 		print("tag selected: \(tag)")
 	}
 }
+
