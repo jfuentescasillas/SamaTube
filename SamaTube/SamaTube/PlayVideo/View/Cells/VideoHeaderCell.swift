@@ -29,23 +29,7 @@ class VideoHeaderCell: UITableViewCell {
 	}
 	
 	
-	func configHorizontalButtons(_ videoModel: VideoItem) {
-		let options = [
-			VideoButtonIcon(title: videoModel.statistics?.likeCount ?? "-", icon: .like),
-			VideoButtonIcon(title: "Dislike", icon: .dislike),
-			VideoButtonIcon(title: "Share", icon: .share),
-			VideoButtonIcon(title: "Download", icon: .download),
-			VideoButtonIcon(title: "Save", icon: .save),
-			VideoButtonIcon(title: "Airplay", icon: .airplay),
-		]
-		
-		buttonsIconListView.buttonIconsList = options
-		buttonsIconListView.delegate = self
-		buttonsIconListView.buildView()
-	}
-	
-	
-	func configCell(videoModel: VideoItem, channelModel: ChannelsItem) {
+	public func configCell(videoModel: VideoItem, channelModel: ChannelsItem) {
 		configHorizontalButtons(videoModel)
 		
 		commentConfig()
@@ -72,6 +56,22 @@ class VideoHeaderCell: UITableViewCell {
 	}
 	
 	
+	private func configHorizontalButtons(_ videoModel: VideoItem) {
+		let options = [
+			VideoButtonIcon(title: videoModel.statistics?.likeCount ?? "-", icon: .like),
+			VideoButtonIcon(title: "Dislike", icon: .dislike),
+			VideoButtonIcon(title: "Share", icon: .share),
+			VideoButtonIcon(title: "Download", icon: .download),
+			VideoButtonIcon(title: "Save", icon: .save),
+			VideoButtonIcon(title: "Airplay", icon: .airplay),
+		]
+		
+		buttonsIconListView.buttonIconsList = options
+		buttonsIconListView.delegate = self
+		buttonsIconListView.buildView()
+	}
+	
+			
 	private func channelDetails(_ videoModel: VideoItem, _ channelModel: ChannelsItem?) {
 		channelName.text = videoModel.snippet?.channelTitle
 		channelName.textColor = .whiteColor
@@ -97,8 +97,10 @@ class VideoHeaderCell: UITableViewCell {
 	private func commentConfig() {
 		let randomInt = Int.random(in: 100..<1000)
 		commentTitle.text = "Comments \(randomInt)"
+		
 		commentProfileImage.image = UIImage.personCircleFill
 		commentProfileImage.tintColor = .whiteColor
+		
 		comment.text = "Excelente información. Gracias."
 	}
 }

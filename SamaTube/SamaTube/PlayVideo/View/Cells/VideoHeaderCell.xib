@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -174,14 +174,14 @@
                         <rect key="frame" x="0.0" y="58" width="372" height="60"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72G-rG-OIQ" userLabel="topSeparator">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="72G-rG-OIQ" userLabel="profileChannelTopSeparator">
                         <rect key="frame" x="0.0" y="118" width="372" height="1"/>
                         <color key="backgroundColor" name="SeparatorColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="lMh-cM-Urs"/>
                         </constraints>
                     </view>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzv-al-fzr" userLabel="topSeparator">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gzv-al-fzr" userLabel="profileChannelBottomSeparator">
                         <rect key="frame" x="0.0" y="167" width="372" height="1"/>
                         <color key="backgroundColor" name="SeparatorColor"/>
                         <constraints>
