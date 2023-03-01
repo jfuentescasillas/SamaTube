@@ -2,10 +2,12 @@
 //  VideoFullWidthCell.swift
 //  SamaTube
 //
-//  Created by Jorge Fuentes Casillas on 28/02/23.
+//  Created by Jorge Fuentes Casillas on 01/03/23.
 //
 
+
 import UIKit
+
 
 class VideoFullWidthCell: UITableViewCell {
 	// MARK: - Elements in XIB
@@ -19,8 +21,8 @@ class VideoFullWidthCell: UITableViewCell {
 	}
 	
 	
-	public func configCell(model: VideoItem) {
-		/*videoTitle.text = model.snippet?.title
+	func configCell(model: VideoItem){
+		videoTitle.text = model.snippet?.title
 		videoTitle.textColor = .whiteColor
 		
 		let channelTitle = model.snippet?.channelTitle ?? ""
@@ -37,6 +39,6 @@ class VideoFullWidthCell: UITableViewCell {
 			return
 		}
 		
-		videoImage.kf.setImage(with: url, placeholder: UIImage.videoPlaceholder)*/
+		videoImage.kf.setImage(with: url, placeholder: UIImage.videoPlaceholder)
 	}
 }

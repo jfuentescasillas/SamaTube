@@ -30,6 +30,8 @@
 		11308F3D29A778B80010D98C /* PlaylistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11308F3B29A778B80010D98C /* PlaylistCell.swift */; };
 		11308F3E29A778B80010D98C /* PlaylistCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11308F3C29A778B80010D98C /* PlaylistCell.xib */; };
 		1172E83529A777450012156E /* MockManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1172E83429A777450012156E /* MockManager.swift */; };
+		1188D0E029AF55D700F52A08 /* VideoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1188D0DE29AF55D700F52A08 /* VideoHeaderCell.swift */; };
+		1188D0E129AF55D700F52A08 /* VideoHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1188D0DF29AF55D700F52A08 /* VideoHeaderCell.xib */; };
 		118AFB5F299E35BC0070F9B9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AFB5E299E35BC0070F9B9 /* AppDelegate.swift */; };
 		118AFB61299E35BC0070F9B9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AFB60299E35BC0070F9B9 /* SceneDelegate.swift */; };
 		118AFB63299E35BC0070F9B9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118AFB62299E35BC0070F9B9 /* ViewController.swift */; };
@@ -67,8 +69,6 @@
 		11CB4E3429AE5C3000C025BB /* PlayVideoPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB4E3329AE5C3000C025BB /* PlayVideoPresenter.swift */; };
 		11CB4E3829AE71E100C025BB /* VideoFullWidthCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB4E3629AE71E000C025BB /* VideoFullWidthCell.swift */; };
 		11CB4E3929AE71E100C025BB /* VideoFullWidthCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11CB4E3729AE71E000C025BB /* VideoFullWidthCell.xib */; };
-		11CB4E3C29AE720000C025BB /* VideoHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB4E3A29AE720000C025BB /* VideoHeaderCell.swift */; };
-		11CB4E3D29AE720000C025BB /* VideoHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11CB4E3B29AE720000C025BB /* VideoHeaderCell.xib */; };
 		11CB4E4029AE755A00C025BB /* ButtonsIconList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB4E3F29AE755A00C025BB /* ButtonsIconList.swift */; };
 		11CB4E4229AE76D100C025BB /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB4E4129AE76D100C025BB /* UILabelExt.swift */; };
 		11D454B129A92A5100870FAA /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D454B029A92A5100870FAA /* SectionTitleView.swift */; };
@@ -102,6 +102,8 @@
 		11308F3B29A778B80010D98C /* PlaylistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCell.swift; sourceTree = "<group>"; };
 		11308F3C29A778B80010D98C /* PlaylistCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistCell.xib; sourceTree = "<group>"; };
 		1172E83429A777450012156E /* MockManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockManager.swift; sourceTree = "<group>"; };
+		1188D0DE29AF55D700F52A08 /* VideoHeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VideoHeaderCell.swift; path = ../../../../../../../../../.Trash/VideoHeaderCell.swift; sourceTree = "<group>"; };
+		1188D0DF29AF55D700F52A08 /* VideoHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VideoHeaderCell.xib; path = ../../../../../../../../../.Trash/VideoHeaderCell.xib; sourceTree = "<group>"; };
 		118AFB5B299E35BC0070F9B9 /* SamaTube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SamaTube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118AFB5E299E35BC0070F9B9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		118AFB60299E35BC0070F9B9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,8 +143,6 @@
 		11CB4E3329AE5C3000C025BB /* PlayVideoPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoPresenter.swift; sourceTree = "<group>"; };
 		11CB4E3629AE71E000C025BB /* VideoFullWidthCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoFullWidthCell.swift; sourceTree = "<group>"; };
 		11CB4E3729AE71E000C025BB /* VideoFullWidthCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoFullWidthCell.xib; sourceTree = "<group>"; };
-		11CB4E3A29AE720000C025BB /* VideoHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoHeaderCell.swift; sourceTree = "<group>"; };
-		11CB4E3B29AE720000C025BB /* VideoHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoHeaderCell.xib; sourceTree = "<group>"; };
 		11CB4E3F29AE755A00C025BB /* ButtonsIconList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsIconList.swift; sourceTree = "<group>"; };
 		11CB4E4129AE76D100C025BB /* UILabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
 		11D454B029A92A5100870FAA /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
@@ -458,8 +458,8 @@
 		11CB4E3529AE71AF00C025BB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				11CB4E3A29AE720000C025BB /* VideoHeaderCell.swift */,
-				11CB4E3B29AE720000C025BB /* VideoHeaderCell.xib */,
+				1188D0DE29AF55D700F52A08 /* VideoHeaderCell.swift */,
+				1188D0DF29AF55D700F52A08 /* VideoHeaderCell.xib */,
 				11CB4E3629AE71E000C025BB /* VideoFullWidthCell.swift */,
 				11CB4E3729AE71E000C025BB /* VideoFullWidthCell.xib */,
 			);
@@ -574,6 +574,7 @@
 				11B6E7ED29A135A10008DE33 /* PlaylistsViewController.xib in Resources */,
 				11F2D7CD29AD11DD0070A275 /* OptionsCollectionViewCell.xib in Resources */,
 				1121103829A4E40C00BA3880 /* Channel.json in Resources */,
+				1188D0E129AF55D700F52A08 /* VideoHeaderCell.xib in Resources */,
 				11308F3E29A778B80010D98C /* PlaylistCell.xib in Resources */,
 				118AFB6B299E35BF0070F9B9 /* LaunchScreen.storyboard in Resources */,
 				1121103F29A4E4C100BA3880 /* SearchVideos.json in Resources */,
@@ -587,7 +588,6 @@
 				11B6E7E529A135640008DE33 /* HomeViewController.xib in Resources */,
 				110C883429ACB3A600CF86A6 /* VideoList.json in Resources */,
 				11B6E7F129A135B90008DE33 /* ChannelsViewController.xib in Resources */,
-				11CB4E3D29AE720000C025BB /* VideoHeaderCell.xib in Resources */,
 				1121104229A4E4EB00BA3880 /* PlaylistItems.json in Resources */,
 				1121103A29A4E45200BA3880 /* Playlists.json in Resources */,
 				11308F3629A7787A0010D98C /* ChannelCellTableViewCell.xib in Resources */,
@@ -647,12 +647,12 @@
 				11B6E7FA29A145800008DE33 /* NetworkError.swift in Sources */,
 				11F2D7C829AD0F3D0070A275 /* TabsView.swift in Sources */,
 				1125A4EF29AB6A9700D6BDF7 /* BottomSheet.swift in Sources */,
+				1188D0E029AF55D700F52A08 /* VideoHeaderCell.swift in Sources */,
 				11BC9D99299F84AE00BDAA1B /* PlaylistModel.swift in Sources */,
 				110C882F29ACA4F000CF86A6 /* VideosPresenter.swift in Sources */,
 				11CB4E4229AE76D100C025BB /* UILabelExt.swift in Sources */,
 				11A07AFB29ACD99B004F8FC9 /* BaseViewController.swift in Sources */,
 				11A07AF729ACD6E7004F8FC9 /* UIColorExt.swift in Sources */,
-				11CB4E3C29AE720000C025BB /* VideoHeaderCell.swift in Sources */,
 				11CB4E3429AE5C3000C025BB /* PlayVideoPresenter.swift in Sources */,
 				111F0FD829A2342F0048CFB3 /* HomePresenter.swift in Sources */,
 				11B6E7E829A1357B0008DE33 /* VideosViewController.swift in Sources */,
