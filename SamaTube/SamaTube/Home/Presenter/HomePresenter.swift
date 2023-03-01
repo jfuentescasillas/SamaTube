@@ -37,12 +37,20 @@ protocol HomeViewProtocol: AnyObject, BaseViewProtocol {
 		objectList.removeAll()
 		sectionTitlelist.removeAll()
 		
+		// Show Activity Indicator
+		delegate?.loadingView(.show)
+		
 		// Ready to be called
 		async let channels = try await provider.getChannel(channelID: Constants.channelID).items
 		async let playlist = try await provider.getPlaylists(channelID: Constants.channelID).items
 		async let videos   = try await provider.getVideos(searchString: "", channelID: Constants.channelID).items
 		
 		do {
+			// Hide Activity Indicator because data was successfully (or not) loaded
+			defer {
+				delegate?.loadingView(.hide)
+			}
+			
 			let (resChannels, resPlaylist, resVideos) = await (try channels, try playlist, try videos)
 			// Index 0
 			objectList.append(resChannels)
@@ -73,6 +81,8 @@ protocol HomeViewProtocol: AnyObject, BaseViewProtocol {
 					await self.getHomeObjects()
 				}
 			})
+			
+			
 		}
 	}
 	

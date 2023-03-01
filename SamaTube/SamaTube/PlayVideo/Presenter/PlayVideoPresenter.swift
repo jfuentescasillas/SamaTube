@@ -34,9 +34,11 @@ protocol PlayVideoViewProtocol: AnyObject, BaseViewProtocol {
 	
 	
 	public func getVideos(_ videoId: String) async {
+		// Show Activity Indicator
 		delegate?.loadingView(.show)
 		
 		do {
+			// Hide Activity Indicator because data was successfully (or not) loaded
 			defer {
 				delegate?.loadingView(.hide)
 			}
