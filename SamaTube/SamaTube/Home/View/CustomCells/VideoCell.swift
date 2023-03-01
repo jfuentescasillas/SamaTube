@@ -50,7 +50,7 @@ class VideoCell: UITableViewCell {
 			videoChannelNameLbl.text = videoItem.snippet?.channelTitle ?? ""
 			viewsCountLbl.text = "\(videoItem.statistics?.viewCount ?? "0") views - 3 months ago"
 			
-		} else if let playlistItems = model as? PlaylistItemsItems {
+		} else if let playlistItems = model as? PlaylistItemsItem {
 			guard let imgURL = playlistItems.snippet.thumbnails?.medium?.url,
 				  let url = URL(string: imgURL) else { return }
 						

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FloatingPanel
 
 
 class HomeViewController: UIViewController {
@@ -13,29 +14,31 @@ class HomeViewController: UIViewController {
 	lazy var presenter = HomePresenter(delegate: self)
 	private var objectList = [[Any]]()
 	private var sectionTitleList = [String]()
+	private var fpc: FloatingPanelController?
 	
 	// MARK: - Elements in storyboard
 	@IBOutlet weak var homeTableView: UITableView!
 	
 	
 	// MARK: - Life Cycle
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
 		configTableView()
-				
+		configFloatingPanel()
+		
 		Task {
 			await presenter.getHomeObjects()
 		}
-    }
+	}
 	
-		
+	
 	// MARK: - Private Methods
 	private func configTableView() {
 		// This line replaces the let nibChannel. The nibVideo, nibPlaylist and SectionTitleView will be refactored as it was done here
 		homeTableView.register(cell: ChannelCellTableViewCell.self)
 		/*let nibChannel = UINib(nibName: "\(ChannelCellTableViewCell.self)", bundle: nil)
-		homeTableView.register(nibChannel, forCellReuseIdentifier: "\(ChannelCellTableViewCell.self)")*/
+		 homeTableView.register(nibChannel, forCellReuseIdentifier: "\(ChannelCellTableViewCell.self)")*/
 		
 		homeTableView.register(cell: VideoCell.self)
 		homeTableView.register(cell: PlaylistCell.self)
@@ -50,7 +53,7 @@ class HomeViewController: UIViewController {
 												  bottom: -40, right: 0)
 	}
 	
-
+	
 	private func configBtnSheet() {
 		let vc = BottomSheet()
 		vc.modalPresentationStyle = .overCurrentContext
@@ -93,15 +96,15 @@ extension HomeViewController: UITableViewDataSource {
 			
 			// The let "channelCell = ..." replaces the code below. For the other cells, the lines similar to this one will be erased and not commented such as here.
 			/*guard let channelCell = tableView.dequeueReusableCell(withIdentifier: "\(ChannelCellTableViewCell.self)", for: indexPath) as? ChannelCellTableViewCell
-			else {
-				return UITableViewCell()
-			}*/
+			 else {
+			 return UITableViewCell()
+			 }*/
 			
 			channelCell.configCell(model: channel[indexPath.row])
 			
 			return channelCell
 			
-		} else if let playlistItems = item as? [PlaylistItemsItems] {
+		} else if let playlistItems = item as? [PlaylistItemsItem] {
 			let playlistItemsCell = tableView.dequeueReusableCell(for: VideoCell.self, for: indexPath)
 			playlistItemsCell.didTapDotsBtn = { [weak self] in
 				guard let self = self else { return }
@@ -159,6 +162,7 @@ extension HomeViewController: UITableViewDelegate {
 		}
 	}
 	
+	
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		guard let sectionView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "\(SectionTitleView.self)") as? SectionTitleView
 		else { return nil }
@@ -167,6 +171,26 @@ extension HomeViewController: UITableViewDelegate {
 		sectionView.configView()
 		
 		return sectionView
+	}
+	
+	
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		let item = objectList[indexPath.section]
+		var videoID: String = ""
+		
+		if let playlistItem = item as? [PlaylistItemsItem] {
+			videoID = playlistItem[indexPath.row].contentDetails.videoId ?? ""
+			
+			print("playlistItem selected with VideoID: \(videoID)")
+		} else if let videos = item as? [VideoItem] {
+			videoID = videos[indexPath.row].id ?? ""
+			print("videos selected with VideoID: \(videoID)")
+		} else {
+			return
+		}
+		
+		print("-------------------")
+		presentViewPanel(with: videoID)
 	}
 }
 
@@ -178,5 +202,57 @@ extension HomeViewController: HomeViewProtocol {
 		self.sectionTitleList = sectionTitleList
 		
 		homeTableView.reloadData()
+	}
+}
+
+
+// MARK: - Extension. FloatingPanelDelegate
+extension HomeViewController: FloatingPanelControllerDelegate {
+	// Private Methods
+	private func configFloatingPanel() {
+		fpc = FloatingPanelController(delegate: self)
+		fpc?.isRemovalInteractionEnabled = true
+		fpc?.surfaceView.grabberHandle.isHidden = true
+		fpc?.layout = MyFloatingPanelLayout()
+		fpc?.surfaceView.contentPadding = .init(top: -48, left: 0, bottom: -48, right: 0)
+	}
+	
+	
+	private func presentViewPanel(with videoId: String) {
+		let contentVC = PlayVideoViewController()
+		contentVC.videoId = videoId
+		
+		guard let fpc = fpc else { return}
+		
+		fpc.set(contentViewController: contentVC)
+		present(fpc, animated: true)
+	}
+	
+	
+	// FloatingPanelControllerDelegate Methods
+	func floatingPanelDidRemove(_ fpc: FloatingPanelController) {
+		
+	}
+	
+	
+	func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+		/*if targetState.pointee != .full {
+			
+		} else {
+			
+		}*/
+	}
+}
+
+
+// MARK: - FPC Class
+class MyFloatingPanelLayout: FloatingPanelLayout {
+	let position: FloatingPanelPosition = .bottom
+	let initialState: FloatingPanelState = .full
+	var anchors: [FloatingPanelState: FloatingPanelLayoutAnchoring] {
+		return [
+			.full: FloatingPanelLayoutAnchor(absoluteInset: 0.0, edge: .top, referenceGuide: .safeArea),
+			.tip: FloatingPanelLayoutAnchor(absoluteInset: 60.0, edge: .bottom, referenceGuide: .safeArea),
+		]
 	}
 }

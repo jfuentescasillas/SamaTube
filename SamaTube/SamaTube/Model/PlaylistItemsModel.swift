@@ -13,20 +13,27 @@ import Foundation
 struct PlaylistItemsModel: Decodable {
 	let kind: String
 	let etag: String
-	let items: [PlaylistItemsItems]
+	let items: [PlaylistItemsItem]
 	let pageInfo: PlaylistItemsPageInfo
 }
 
 
-struct PlaylistItemsItems: Decodable {
+struct PlaylistItemsItem: Decodable {
 	let kind: String
 	let etag: String
 	let id: String
 	let snippet: VideoSnippet
+	let contentDetails: PlaylistItemsContentDetails
 }
 
 
 struct PlaylistItemsPageInfo: Decodable {
 	let totalResults: Int
 	let resultsPerPage: Int
+}
+
+
+struct PlaylistItemsContentDetails: Decodable {
+	let videoId: String?
+	let videoPublishedAt: String?
 }

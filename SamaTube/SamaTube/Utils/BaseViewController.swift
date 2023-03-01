@@ -5,14 +5,32 @@
 //  Created by Jorge Fuentes Casillas on 27/02/23.
 //
 
+
 import UIKit
 
+
+enum LoadingViewState {
+	case show
+	case hide
+}
+
+
+protocol BaseViewProtocol {
+	func loadingView(_ state: LoadingViewState)
+	func showError(_ error: String, callback: (()->Void)?)
+}
+
+
 class BaseViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
+	// MARK: - Properties
+	var loadingIndicator = UIActivityIndicatorView(style: .large)
+	
+	
+	// MARK: - Life Cycle
+	override func viewDidLoad() {
+		super.viewDidLoad()
+		
+	}
 	
 	
 	func configNavBar() {
@@ -70,5 +88,52 @@ class BaseViewController: UIViewController {
 	
 	@objc func dotsBtnPressed() {
 		print("Dots button pressed")
+	}
+}
+
+
+extension BaseViewController {
+	func showError(_ error: String, callback: (()->Void)?) {
+		let alert = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
+		
+		if let callback = callback {
+			alert.addAction(UIAlertAction(title: "Retry", style: .default, handler: { action in
+				if action.style == .default {
+					callback()
+					print("retry button pressed")
+				}
+			}))
+		}
+		
+		alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { action in
+			if action.style == .cancel {
+				print("ok button pressed")
+			}
+		}))
+		
+		present(alert, animated: true)
+	}
+	
+	
+	func loadingView(_ state: LoadingViewState) {
+		switch state {
+		case .show:
+			showLoading()
+		case .hide:
+			hideLoading()
+		}
+	}
+	
+	
+	private func showLoading() {
+		view.addSubview(loadingIndicator)
+		loadingIndicator.center = view.center
+		loadingIndicator.startAnimating()
+	}
+	
+	
+	private func hideLoading(){
+		loadingIndicator.stopAnimating()
+		loadingIndicator.removeFromSuperview()
 	}
 }

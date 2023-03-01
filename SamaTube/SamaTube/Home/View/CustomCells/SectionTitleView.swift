@@ -55,5 +55,5 @@ class SectionTitleView: UITableViewHeaderFooterView {
 			title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 13.0),
 			title.topAnchor.constraint(equalTo: customView.topAnchor, constant: 0.0)
 		])
-	}	
+	}
 }
