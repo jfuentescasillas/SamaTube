@@ -13,7 +13,21 @@ class PlayVideoViewController: BaseViewController {
 	// MARK: - Properties
 	lazy var presenter = PlayVideoPresenter(delegate: self)
 	public var videoId: String = ""
+	
+	// Closure that returns a Bool. Read the info and send it to the other view
+	public var goingToBeCollapsed: ((Bool)->Void)?
+	lazy var collapseVideoButton: UIButton = {
+		let button = UIButton(type: .custom)
+		button.setTitle("", for: .normal)
+		button.setImage(UIImage.chevronDown, for: .normal)
+		button.tintColor = .whiteColor
+		button.translatesAutoresizingMaskIntoConstraints = false
+		button.addTarget(self, action: #selector(collapsedVideoButtonPressed(_:)),
+						 for: .touchUpInside)
 		
+		return button
+	}()
+	
 	// MARK: - Elements in XIB
 	@IBOutlet weak var playerView: YTPlayerView!
 	@IBOutlet weak var videosTableView: UITableView!
@@ -26,6 +40,7 @@ class PlayVideoViewController: BaseViewController {
 		configPlayerView()
 		configTableView()
 		loadDataFromApi()
+		configCloseButton()
 	}
 	
 	
@@ -51,13 +66,32 @@ class PlayVideoViewController: BaseViewController {
 		// Datasource and Delegate
 		videosTableView.dataSource = self
 		videosTableView.delegate = self
-				
+		
 		// Register TableView
 		videosTableView.register(cell: VideoHeaderCell.self)
 		videosTableView.register(cell: VideoFullWidthCell.self)
 		
 		videosTableView.rowHeight = UITableView.automaticDimension
 		videosTableView.estimatedRowHeight = 60
+	}
+	
+	
+	// MARK: - Methods to collapse VC
+	@objc private func collapsedVideoButtonPressed(_ sender: UIButton) {
+		guard let goingToBeCollapsed = self.goingToBeCollapsed else { return }
+		goingToBeCollapsed(true)
+	}
+	
+	
+	private func configCloseButton() {
+		playerView.addSubview(collapseVideoButton)
+		
+		NSLayoutConstraint.activate([
+			collapseVideoButton.topAnchor.constraint(equalTo: playerView.topAnchor, constant: 5),
+			collapseVideoButton.leadingAnchor.constraint(equalTo: playerView.leadingAnchor, constant: 5),
+			collapseVideoButton.widthAnchor.constraint(equalToConstant: 25),
+			collapseVideoButton.heightAnchor.constraint(equalToConstant: 25),
+		])
 	}
 }
 
@@ -73,14 +107,14 @@ extension PlayVideoViewController: YTPlayerViewDelegate {
 // MARK: - Extension. PlayVideoViewProtocol
 extension PlayVideoViewController: PlayVideoViewProtocol {
 	/*func loadingView(_ state: LoadingViewState) {
-		
-	}
-	
-	
-	func showError(_ error: String, callback: (() -> Void)?) {
-		
-	}
-*/
+	 
+	 }
+	 
+	 
+	 func showError(_ error: String, callback: (() -> Void)?) {
+	 
+	 }
+	 */
 	
 	func getRelatedVideosFinished() {
 		print("***** Response in GettingVideos. Finished *****")
