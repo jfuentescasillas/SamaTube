@@ -37,6 +37,7 @@
 		118AFB68299E35BF0070F9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 118AFB67299E35BF0070F9B9 /* Assets.xcassets */; };
 		118AFB6B299E35BF0070F9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118AFB69299E35BF0070F9B9 /* LaunchScreen.storyboard */; };
 		11997E3529B1084D000E43A1 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11997E3429B1084D000E43A1 /* HomePresenterTests.swift */; };
+		11997E3729B119AE000E43A1 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11997E3629B119AE000E43A1 /* HomeViewControllerTests.swift */; };
 		11A07AF529ACC5D9004F8FC9 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A07AF429ACC5D9004F8FC9 /* UITableViewExt.swift */; };
 		11A07AF729ACD6E7004F8FC9 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A07AF629ACD6E7004F8FC9 /* UIColorExt.swift */; };
 		11A07AF929ACD7EC004F8FC9 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A07AF829ACD7EC004F8FC9 /* UIImageExt.swift */; };
@@ -123,6 +124,7 @@
 		118AFB6A299E35BF0070F9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		118AFB6C299E35BF0070F9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11997E3429B1084D000E43A1 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		11997E3629B119AE000E43A1 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		11A07AF429ACC5D9004F8FC9 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		11A07AF629ACD6E7004F8FC9 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		11A07AF829ACD7EC004F8FC9 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
@@ -503,6 +505,7 @@
 			children = (
 				11DF60E629B0B61800DD3DA8 /* PlayVideoPresenterTests.swift */,
 				11997E3429B1084D000E43A1 /* HomePresenterTests.swift */,
+				11997E3629B119AE000E43A1 /* HomeViewControllerTests.swift */,
 			);
 			path = SamaTubeTests;
 			sourceTree = "<group>";
@@ -761,6 +764,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11DF60E729B0B61800DD3DA8 /* PlayVideoPresenterTests.swift in Sources */,
+				11997E3729B119AE000E43A1 /* HomeViewControllerTests.swift in Sources */,
 				11997E3529B1084D000E43A1 /* HomePresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
