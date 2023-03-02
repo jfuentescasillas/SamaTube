@@ -36,6 +36,8 @@
 		118AFB66299E35BC0070F9B9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118AFB64299E35BC0070F9B9 /* Main.storyboard */; };
 		118AFB68299E35BF0070F9B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 118AFB67299E35BF0070F9B9 /* Assets.xcassets */; };
 		118AFB6B299E35BF0070F9B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 118AFB69299E35BF0070F9B9 /* LaunchScreen.storyboard */; };
+		11997E3529B1084D000E43A1 /* HomePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11997E3429B1084D000E43A1 /* HomePresenterTests.swift */; };
+		11997E3729B119AE000E43A1 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11997E3629B119AE000E43A1 /* HomeViewControllerTests.swift */; };
 		11A07AF529ACC5D9004F8FC9 /* UITableViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A07AF429ACC5D9004F8FC9 /* UITableViewExt.swift */; };
 		11A07AF729ACD6E7004F8FC9 /* UIColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A07AF629ACD6E7004F8FC9 /* UIColorExt.swift */; };
 		11A07AF929ACD7EC004F8FC9 /* UIImageExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A07AF829ACD7EC004F8FC9 /* UIImageExt.swift */; };
@@ -70,6 +72,7 @@
 		11CB4E4029AE755A00C025BB /* ButtonsIconList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB4E3F29AE755A00C025BB /* ButtonsIconList.swift */; };
 		11CB4E4229AE76D100C025BB /* UILabelExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB4E4129AE76D100C025BB /* UILabelExt.swift */; };
 		11D454B129A92A5100870FAA /* SectionTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D454B029A92A5100870FAA /* SectionTitleView.swift */; };
+		11DF60E729B0B61800DD3DA8 /* PlayVideoPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DF60E629B0B61800DD3DA8 /* PlayVideoPresenterTests.swift */; };
 		11F2D7C829AD0F3D0070A275 /* TabsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D7C729AD0F3D0070A275 /* TabsView.swift */; };
 		11F2D7CC29AD11DD0070A275 /* OptionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F2D7CA29AD11DD0070A275 /* OptionsCollectionViewCell.swift */; };
 		11F2D7CD29AD11DD0070A275 /* OptionsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F2D7CB29AD11DD0070A275 /* OptionsCollectionViewCell.xib */; };
@@ -77,6 +80,16 @@
 		11F5F56E29AF712E0025BEE8 /* VideoHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F5F56C29AF712E0025BEE8 /* VideoHeaderCell.xib */; };
 		59A0C25DB5E9E5DEEF80BF5B /* Pods_SamaTube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67951BEE8C0DA349AB18DE61 /* Pods_SamaTube.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11DF60E129B0B58D00DD3DA8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 118AFB53299E35BC0070F9B9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 118AFB5A299E35BC0070F9B9;
+			remoteInfo = SamaTube;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		110C882C29ACA4E300CF86A6 /* VideosProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosProvider.swift; sourceTree = "<group>"; };
@@ -110,6 +123,8 @@
 		118AFB67299E35BF0070F9B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		118AFB6A299E35BF0070F9B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		118AFB6C299E35BF0070F9B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11997E3429B1084D000E43A1 /* HomePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenterTests.swift; sourceTree = "<group>"; };
+		11997E3629B119AE000E43A1 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		11A07AF429ACC5D9004F8FC9 /* UITableViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExt.swift; sourceTree = "<group>"; };
 		11A07AF629ACD6E7004F8FC9 /* UIColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExt.swift; sourceTree = "<group>"; };
 		11A07AF829ACD7EC004F8FC9 /* UIImageExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExt.swift; sourceTree = "<group>"; };
@@ -144,6 +159,8 @@
 		11CB4E3F29AE755A00C025BB /* ButtonsIconList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsIconList.swift; sourceTree = "<group>"; };
 		11CB4E4129AE76D100C025BB /* UILabelExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabelExt.swift; sourceTree = "<group>"; };
 		11D454B029A92A5100870FAA /* SectionTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleView.swift; sourceTree = "<group>"; };
+		11DF60DD29B0B58D00DD3DA8 /* SamaTubeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SamaTubeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11DF60E629B0B61800DD3DA8 /* PlayVideoPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoPresenterTests.swift; sourceTree = "<group>"; };
 		11F2D7C729AD0F3D0070A275 /* TabsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabsView.swift; sourceTree = "<group>"; };
 		11F2D7CA29AD11DD0070A275 /* OptionsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsCollectionViewCell.swift; sourceTree = "<group>"; };
 		11F2D7CB29AD11DD0070A275 /* OptionsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -160,6 +177,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				59A0C25DB5E9E5DEEF80BF5B /* Pods_SamaTube.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DF60DA29B0B58D00DD3DA8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				118AFB5D299E35BC0070F9B9 /* SamaTube */,
+				11DF60DE29B0B58D00DD3DA8 /* SamaTubeTests */,
 				118AFB5C299E35BC0070F9B9 /* Products */,
 				7E73ADDE199F1132D063AFDA /* Pods */,
 				88EC7ED24174DC7EA14E13D8 /* Frameworks */,
@@ -335,6 +360,7 @@
 			isa = PBXGroup;
 			children = (
 				118AFB5B299E35BC0070F9B9 /* SamaTube.app */,
+				11DF60DD29B0B58D00DD3DA8 /* SamaTubeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -474,6 +500,16 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
+		11DF60DE29B0B58D00DD3DA8 /* SamaTubeTests */ = {
+			isa = PBXGroup;
+			children = (
+				11DF60E629B0B61800DD3DA8 /* PlayVideoPresenterTests.swift */,
+				11997E3429B1084D000E43A1 /* HomePresenterTests.swift */,
+				11997E3629B119AE000E43A1 /* HomeViewControllerTests.swift */,
+			);
+			path = SamaTubeTests;
+			sourceTree = "<group>";
+		};
 		11F2D7C629AD0F300070A275 /* TabsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,6 +567,24 @@
 			productReference = 118AFB5B299E35BC0070F9B9 /* SamaTube.app */;
 			productType = "com.apple.product-type.application";
 		};
+		11DF60DC29B0B58D00DD3DA8 /* SamaTubeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11DF60E529B0B58D00DD3DA8 /* Build configuration list for PBXNativeTarget "SamaTubeTests" */;
+			buildPhases = (
+				11DF60D929B0B58D00DD3DA8 /* Sources */,
+				11DF60DA29B0B58D00DD3DA8 /* Frameworks */,
+				11DF60DB29B0B58D00DD3DA8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11DF60E229B0B58D00DD3DA8 /* PBXTargetDependency */,
+			);
+			name = SamaTubeTests;
+			productName = SamaTubeTests;
+			productReference = 11DF60DD29B0B58D00DD3DA8 /* SamaTubeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -543,6 +597,11 @@
 				TargetAttributes = {
 					118AFB5A299E35BC0070F9B9 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					11DF60DC29B0B58D00DD3DA8 = {
+						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
+						TestTargetID = 118AFB5A299E35BC0070F9B9;
 					};
 				};
 			};
@@ -560,6 +619,7 @@
 			projectRoot = "";
 			targets = (
 				118AFB5A299E35BC0070F9B9 /* SamaTube */,
+				11DF60DC29B0B58D00DD3DA8 /* SamaTubeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -591,6 +651,13 @@
 				1121104229A4E4EB00BA3880 /* PlaylistItems.json in Resources */,
 				1121103A29A4E45200BA3880 /* Playlists.json in Resources */,
 				11308F3629A7787A0010D98C /* ChannelCellTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11DF60DB29B0B58D00DD3DA8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -692,7 +759,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11DF60D929B0B58D00DD3DA8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11DF60E729B0B61800DD3DA8 /* PlayVideoPresenterTests.swift in Sources */,
+				11997E3729B119AE000E43A1 /* HomeViewControllerTests.swift in Sources */,
+				11997E3529B1084D000E43A1 /* HomePresenterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11DF60E229B0B58D00DD3DA8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 118AFB5A299E35BC0070F9B9 /* SamaTube */;
+			targetProxy = 11DF60E129B0B58D00DD3DA8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		118AFB64299E35BC0070F9B9 /* Main.storyboard */ = {
@@ -886,6 +971,55 @@
 			};
 			name = Release;
 		};
+		11DF60E329B0B58D00DD3DA8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B98K56955;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = JorgeFuentes.SamaTubeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SamaTube.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SamaTube";
+			};
+			name = Debug;
+		};
+		11DF60E429B0B58D00DD3DA8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7B98K56955;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = JorgeFuentes.SamaTubeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SamaTube.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SamaTube";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -903,6 +1037,15 @@
 			buildConfigurations = (
 				118AFB70299E35BF0070F9B9 /* Debug */,
 				118AFB71299E35BF0070F9B9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11DF60E529B0B58D00DD3DA8 /* Build configuration list for PBXNativeTarget "SamaTubeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11DF60E329B0B58D00DD3DA8 /* Debug */,
+				11DF60E429B0B58D00DD3DA8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

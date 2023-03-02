@@ -9,16 +9,19 @@
 import Foundation
 
 
+// MARK: - HomeViewProtocol
+// It will be called from an extension in HomeViewController
 protocol HomeViewProtocol: AnyObject, BaseViewProtocol {
 	func getData(list: [[Any]], sectionTitleList: [String])
 }
 
 
+// MARK: - HomePresenter
 @MainActor class HomePresenter {
 	var provider: HomeProviderProtocol
 	weak var delegate: HomeViewProtocol?
 	private var objectList = [[Any]]()
-	private var sectionTitlelist = [String]()
+	public var sectionTitlelist = [String]()
 	
 	init(delegate: HomeViewProtocol, provider: HomeProviderProtocol = HomeProvider()) {
 		self.delegate = delegate
