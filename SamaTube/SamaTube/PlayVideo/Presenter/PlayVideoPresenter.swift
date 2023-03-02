@@ -15,6 +15,7 @@ protocol PlayVideoViewProtocol: AnyObject, BaseViewProtocol {
 
 
 @MainActor class PlayVideoPresenter {
+	// MARK: - Properties
 	private weak var delegate: PlayVideoViewProtocol?
 	private var provider: PlayVideoProviderProtocol
 		
@@ -33,6 +34,7 @@ protocol PlayVideoViewProtocol: AnyObject, BaseViewProtocol {
 	}
 	
 	
+	// MARK: - Customized Methods
 	public func getVideos(_ videoId: String) async {
 		// Show Activity Indicator
 		delegate?.loadingView(.show)

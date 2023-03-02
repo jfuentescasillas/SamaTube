@@ -11,7 +11,49 @@ import youtube_ios_player_helper
 
 
 class PlayVideoViewController: BaseViewController {
-    // MARK: - Elements in XIB
+	// MARK: - Properties
+	lazy var presenter = PlayVideoPresenter(delegate: self)
+	var goingToBeCollapsed: ((Bool) -> Void)?
+	var isClosedVideo: (() -> Void)?
+	var videoId: String = ""
+	
+	var isPlayingVideo: Bool = false {
+		didSet {
+			playVideoButton.setImage(isPlayingVideo ? .pause: .playFill, for: .normal)
+		}
+	}
+	
+	lazy var collapseVideoButton: UIButton = {
+		let button = UIButton(type: .custom)
+		button.setTitle("", for: .normal)
+		button.setImage(UIImage.chevronDown, for: .normal)
+		button.tintColor = .whiteColor
+		button.translatesAutoresizingMaskIntoConstraints = false
+		button.addTarget(self, action: #selector(collapsedVideoButtonPressed(_:)), for: .touchUpInside)
+	   
+		return button
+	}()
+	
+	var topInsetSafeArea: UIView = {
+		let view = UIView()
+		view.translatesAutoresizingMaskIntoConstraints = false
+		view.backgroundColor = .black
+	   
+		return view
+	}()
+	
+	var progressBar: UIProgressView = {
+		let progress = UIProgressView()
+		progress.translatesAutoresizingMaskIntoConstraints = false
+		progress.trackTintColor = .clear
+		progress.progressTintColor = .red
+		progress.progress = 0.0
+	   
+		return progress
+	}()
+	
+	
+	// MARK: - Elements in XIB
 	@IBOutlet weak var playerView: YTPlayerView!
     @IBOutlet weak var tableViewVideos: UITableView!
     
@@ -26,51 +68,11 @@ class PlayVideoViewController: BaseViewController {
 	@IBOutlet weak var playerViewTrailingConstraint: NSLayoutConstraint!
 	@IBOutlet weak var playerViewHeightConstraint: NSLayoutConstraint!
     
-	// MARK: - Properties
-    lazy var presenter = PlayVideoPresenter(delegate: self)
-    var goingToBeCollapsed: ((Bool)->Void)?
-    var isClosedVideo: (()->Void)?
-    var videoId: String = ""
-    
-    var isPlayingVideo: Bool = false {
-        didSet {
-            playVideoButton.setImage(isPlayingVideo ? .pause: .playFill, for: .normal)
-        }
-    }
-    
-    lazy var collapseVideoButton: UIButton = {
-        let button = UIButton(type: .custom)
-        button.setTitle("", for: .normal)
-        button.setImage(UIImage.chevronDown, for: .normal)
-        button.tintColor = .whiteColor
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(collapsedVideoButtonPressed(_:)), for: .touchUpInside)
-       
-		return button
-    }()
-    
-    var topInsetSafeArea: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .black
-       
-		return view
-    }()
-    
-    var progressBar: UIProgressView = {
-        let progress = UIProgressView()
-        progress.translatesAutoresizingMaskIntoConstraints = false
-        progress.trackTintColor = .clear
-        progress.progressTintColor = .red
-        progress.progress = 0.0
-       
-		return progress
-    }()
-    
 	
 	// MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+		
         configTableView()
         configPlayerView()
         loadDataFromApi()
@@ -120,11 +122,12 @@ class PlayVideoViewController: BaseViewController {
 	
     func configProgressLayout() {
         tipView.addSubview(progressBar)
+		
         NSLayoutConstraint.activate([
             progressBar.widthAnchor.constraint(equalTo: tipView.widthAnchor),
             progressBar.heightAnchor.constraint(equalToConstant: 2.0),
             progressBar.centerXAnchor.constraint(equalTo: tipView.centerXAnchor),
-            progressBar.bottomAnchor.constraint(equalTo: tipView.bottomAnchor, constant: 12),
+            progressBar.bottomAnchor.constraint(equalTo: tipView.bottomAnchor, constant: 10)
         ])
     }
 	
@@ -164,6 +167,7 @@ class PlayVideoViewController: BaseViewController {
     @objc func floatingPannelChanged(notification: Notification) {
         guard let value = notification.object as? [String: String] else { return }
         
+		// The value of the key is "top"
 		if value["position"] == "top" {
             tipView.isHidden = true
             playerViewHeightConstraint.constant = 225.0
@@ -177,7 +181,7 @@ class PlayVideoViewController: BaseViewController {
         } else { // The value of the key is "bottom"
             tipView.isHidden = false
             collapseVideoButton.isHidden = true
-            playerViewHeightConstraint.constant = playerViewHeightConstraint.constant * 0.3
+			playerViewHeightConstraint.constant = playerViewHeightConstraint.constant * 0.3
             playerViewTrailingConstraint.constant = UIScreen.main.bounds.width * 0.7
             
 			view.layoutIfNeeded()
@@ -195,7 +199,7 @@ class PlayVideoViewController: BaseViewController {
 	
     @IBAction func closeButtonPressed(_ sender: Any) {
         if let isClosedVideo = isClosedVideo {
-            isClosedVideo()
+			isClosedVideo()
         }
 		
         dismiss(animated: true)
@@ -299,7 +303,9 @@ extension PlayVideoViewController: YTPlayerViewDelegate {
     
 	
     func playerView(_ playerView: YTPlayerView, didPlayTime playTime: Float) {
-        playerView.duration { duration, error in
+        playerView.duration { [weak self] (duration, error) in
+			guard let self = self else { return }
+			
             self.progressBar.progress = (playTime/Float(duration))
         }
     }
@@ -314,8 +320,8 @@ extension PlayVideoViewController: PlayVideoViewProtocol {
 		else { return }
         
 		videoTitleLabel.text = title
-        
 		channelTitleLabel.text = presenter.channelModel?.snippet?.title
-        tableViewVideos.reloadData()
+        
+		tableViewVideos.reloadData()
     }
 }

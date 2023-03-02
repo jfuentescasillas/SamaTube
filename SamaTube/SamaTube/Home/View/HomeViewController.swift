@@ -265,6 +265,12 @@ extension HomeViewController: FloatingPanelControllerDelegate {
 			}
 		}
 		
+		contentVC.isClosedVideo = { [weak self] in
+			guard let self = self else { return }
+			
+			self.isFloatingPanelPresented = false
+		}
+		
 		guard let fpc = fpc else { return }
 		
 		isFloatingPanelPresented = true
@@ -278,7 +284,7 @@ extension HomeViewController: FloatingPanelControllerDelegate {
 	
 	// FloatingPanelControllerDelegate Methods
 	func floatingPanelDidRemove(_ fpc: FloatingPanelController) {
-		
+		isFloatingPanelPresented = false
 	}
 	
 	
