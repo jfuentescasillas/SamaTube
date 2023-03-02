@@ -65,7 +65,7 @@ protocol PlayVideoViewProtocol: AnyObject, BaseViewProtocol {
 	}
 	
 	
-	private func getChannelAndRelatedVideos(_ videoId: String, _ channelId: String) async {
+	func getChannelAndRelatedVideos(_ videoId: String, _ channelId: String) async {
 		async let relatedVideos = try await provider.getRelatedVideos(videoId)
 		async let channel = try await provider.getChannel(channelId)
 		
