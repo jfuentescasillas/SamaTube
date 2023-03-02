@@ -15,6 +15,7 @@ class HomeViewController: BaseViewController {
 	private var objectList = [[Any]]()
 	private var sectionTitleList = [String]()
 	private var fpc: FloatingPanelController?
+	private var isFloatingPanelPresented: Bool = false
 	
 	// MARK: - Elements in storyboard
 	@IBOutlet weak var homeTableView: UITableView!
@@ -186,11 +187,36 @@ extension HomeViewController: UITableViewDelegate {
 			videoID = videos[indexPath.row].id ?? ""
 			print("videos selected with VideoID: \(videoID)")
 		} else {
-			return
+			print("Invalid Video Selected with id: \(videoID)")
+			print("*********************")
 		}
 		
-		print("-------------------")
-		presentViewPanel(with: videoID)
+		/* This if-else statement solve the next crash:
+		 1. Select a video
+		 2. Minimize (but don't close) the playing video
+		 3. Click on another video on the tableView
+		 */
+		if isFloatingPanelPresented {
+			guard let fpc = fpc else { return }
+			
+			fpc.willMove(toParent: nil)
+			fpc.hide(animated: true) { [weak self] in
+				guard let self = self else { return }
+				
+				// Remove floating panel view from controller's view
+				fpc.view.removeFromSuperview()
+				
+				// Remove floating panel controller from controller hierarchy
+				fpc.removeFromParent()
+				
+				self.dismiss(animated: true) {
+					self.presentViewPanel(with: videoID)
+				}
+			}
+		} else {
+			print("-----------FALSE-----------")
+			presentViewPanel(with: videoID)
+		}
 	}
 }
 
@@ -222,25 +248,54 @@ extension HomeViewController: FloatingPanelControllerDelegate {
 		let contentVC = PlayVideoViewController()
 		contentVC.videoId = videoId
 		
-		guard let fpc = fpc else { return}
+		// Receives the action sent from the contentVC (in this case: PlayVideoViewController()
+		contentVC.goingToBeCollapsed = { [weak self] isGoingToBeCollapsed in
+			guard let self = self else { return }
+			
+			if isGoingToBeCollapsed {
+				self.fpc?.move(to: .tip, animated: true)
+				
+				NotificationCenter.default.post(name: .viewPosition, object: ["position":"bottom"])
+				self.fpc?.surfaceView.contentPadding = .init(top: 0, left: 0, bottom: 0, right: 0)
+			} else {
+				self.fpc?.move(to: .full, animated: true)
+				
+				NotificationCenter.default.post(name: .viewPosition, object: ["position":"top"])
+				self.fpc?.surfaceView.contentPadding = .init(top: -48, left: 0, bottom: -48, right: 0)
+			}
+		}
+		
+		contentVC.isClosedVideo = { [weak self] in
+			guard let self = self else { return }
+			
+			self.isFloatingPanelPresented = false
+		}
+		
+		guard let fpc = fpc else { return }
+		
+		isFloatingPanelPresented = true
 		
 		fpc.set(contentViewController: contentVC)
+		fpc.track(scrollView: contentVC.tableViewVideos)
+		
 		present(fpc, animated: true)
 	}
 	
 	
 	// FloatingPanelControllerDelegate Methods
 	func floatingPanelDidRemove(_ fpc: FloatingPanelController) {
-		
+		isFloatingPanelPresented = false
 	}
 	
 	
-	func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-		/*if targetState.pointee != .full {
-			
+	func floatingPanelWillEndDragging(_ vc: FloatingPanelController, withVelocity velocity: CGPoint, targetState: UnsafeMutablePointer<FloatingPanelState>) {
+		if targetState.pointee != .full {
+			NotificationCenter.default.post(name: .viewPosition, object: ["position":"bottom"])
+			fpc?.surfaceView.contentPadding = .init(top: 0, left: 0, bottom: 0, right: 0)
 		} else {
-			
-		}*/
+			NotificationCenter.default.post(name: .viewPosition, object: ["position":"top"])
+			fpc?.surfaceView.contentPadding = .init(top: -48, left: 0, bottom: -48, right: 0)
+		}
 	}
 }
 
@@ -255,4 +310,11 @@ class MyFloatingPanelLayout: FloatingPanelLayout {
 			.tip: FloatingPanelLayoutAnchor(absoluteInset: 60.0, edge: .bottom, referenceGuide: .safeArea),
 		]
 	}
+}
+
+
+// MARK: - NSNotification
+extension NSNotification.Name{
+	static let viewPosition = Notification.Name("viewPosition")
+	static let expand = Notification.Name("expand")
 }
