@@ -21,7 +21,7 @@ protocol HomeViewProtocol: AnyObject, BaseViewProtocol {
 	var provider: HomeProviderProtocol
 	weak var delegate: HomeViewProtocol?
 	private var objectList = [[Any]]()
-	private var sectionTitlelist = [String]()
+	public var sectionTitlelist = [String]()
 	
 	init(delegate: HomeViewProtocol, provider: HomeProviderProtocol = HomeProvider()) {
 		self.delegate = delegate
