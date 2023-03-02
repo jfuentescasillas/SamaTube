@@ -9,6 +9,8 @@
 import Foundation
 
 
+// MARK: - PlayVideoViewProtocol
+// It will be called from an extension in PlayVideoViewController
 protocol PlayVideoViewProtocol: AnyObject, BaseViewProtocol {
 	func getRelatedVideosFinished()
 }

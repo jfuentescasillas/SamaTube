@@ -120,6 +120,7 @@ extension BaseViewController {
 		switch state {
 		case .show:
 			showLoading()
+			
 		case .hide:
 			hideLoading()
 		}

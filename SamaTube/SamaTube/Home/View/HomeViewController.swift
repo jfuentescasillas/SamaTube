@@ -9,6 +9,7 @@ import UIKit
 import FloatingPanel
 
 
+// MARK: - HomeViewController
 class HomeViewController: BaseViewController {
 	// MARK: - Properties
 	lazy var presenter = HomePresenter(delegate: self)
@@ -234,7 +235,7 @@ extension HomeViewController: HomeViewProtocol {
 
 // MARK: - Extension. FloatingPanelDelegate
 extension HomeViewController: FloatingPanelControllerDelegate {
-	// Private Methods
+	// Custom Private Methods related to the FloatingPanel
 	private func configFloatingPanel() {
 		fpc = FloatingPanelController(delegate: self)
 		fpc?.isRemovalInteractionEnabled = true
@@ -313,7 +314,7 @@ class MyFloatingPanelLayout: FloatingPanelLayout {
 }
 
 
-// MARK: - NSNotification
+// MARK: - Extension for NSNotification
 extension NSNotification.Name{
 	static let viewPosition = Notification.Name("viewPosition")
 	static let expand = Notification.Name("expand")
