@@ -17,6 +17,7 @@ class VideoCell: UITableViewCell {
 	@IBOutlet weak var videoChannelNameLbl: UILabel!
 	@IBOutlet weak var viewsCountLbl: UILabel!
 	@IBOutlet weak var dotsImgView: UIImageView!
+	@IBOutlet weak var dotsBtnLbl: UIButton!  // Used for the XCTests
 	
 	
 	// MARK: - Life Cycle
