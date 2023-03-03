@@ -78,6 +78,10 @@ class BaseViewController: UIViewController {
 	// MARK: - OBJC methods
 	@objc func shareBtnPressed() {
 		print("Share button pressed")
+		
+		let vc = HomeViewController()
+		
+		navigationController?.pushViewController(vc, animated: true)
 	}
 	
 	

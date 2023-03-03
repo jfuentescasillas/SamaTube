@@ -18,8 +18,8 @@ protocol HomeViewProtocol: AnyObject, BaseViewProtocol {
 
 // MARK: - HomePresenter
 @MainActor class HomePresenter {
-	var provider: HomeProviderProtocol
 	weak var delegate: HomeViewProtocol?
+	var provider: HomeProviderProtocol
 	private var objectList = [[Any]]()
 	public var sectionTitlelist = [String]()
 	

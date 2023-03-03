@@ -85,6 +85,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" name="backgroundColor"/>
             <connections>
+                <outlet property="dotsBtnLbl" destination="Rj7-6w-E0R" id="svv-mb-RVj"/>
                 <outlet property="dotsImgView" destination="60f-pT-64p" id="pMD-rf-yIf"/>
                 <outlet property="videoChannelNameLbl" destination="Sju-N2-Uyy" id="M5a-SD-Zzx"/>
                 <outlet property="videoImgView" destination="jhP-jm-g2W" id="9bN-Bp-zG2"/>
